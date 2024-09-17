@@ -1,9 +1,0 @@
-#!/bin/bash
-#
-# We are going to clone the dotfiles repo and set it up as a bare repo again
-#
-git clone --bare https://www.github.com/throttlemeister/dotfiles.git $HOME/.cfg
-#
-# This will bootstrap the environment.
-#
-# EOF
