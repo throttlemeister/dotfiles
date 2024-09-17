@@ -10,6 +10,7 @@ function fish_greeting
         inxi -S && inxi
       end
       #cd
+
       # First make sure we have the latest version of code from git. If it's 
       # not there, we clone the repo.
       #if test -d $HOME/.config/fish/.git
@@ -18,6 +19,7 @@ function fish_greeting
       #  cd $HOME/.config
       #  git clone https://github.com/throttlemeister/fish.git
       #end
+
       # We do that for the Ansible directory too
       if test -d $HOME/ansible/.git
         cd $HOME/ansible; git pull 1>/dev/null; cd
