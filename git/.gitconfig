@@ -1,0 +1,7 @@
+[user]
+        name = throttlemeister
+        email = throttlemeister@sport-touring.eu
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[core]
+	editor = vi
