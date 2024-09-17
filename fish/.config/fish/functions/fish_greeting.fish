@@ -13,6 +13,10 @@ function fish_greeting
 
       # First make sure we have the latest version of code from git. If it's 
       # not there, we clone the repo.
+      #if test -d $HOME/.dotfiles/.git
+      #	cd $HOME/.dotfiles; git pull 1>/dev/null
+      #end
+
       #if test -d $HOME/.config/fish/.git
       #  cd $HOME/.config/fish; git pull 1>/dev/null; cd
       #else
@@ -21,12 +25,12 @@ function fish_greeting
       #end
 
       # We do that for the Ansible directory too
-      if test -d $HOME/ansible/.git
-        cd $HOME/ansible; git pull 1>/dev/null; cd
-      else
-        cd $HOME
-        git clone https://github.com/throttlemeister/ansible.git
-      end
+      #if test -d $HOME/ansible/.git
+      #  cd $HOME/ansible; git pull 1>/dev/null; cd
+      #else
+      #  cd $HOME
+      #  git clone https://github.com/throttlemeister/ansible.git
+      #end
       # GitHub way of authenticating changed, so we do not use this anymore.
       # Housekeeping.
       if test -f "$HOME/.secret"
