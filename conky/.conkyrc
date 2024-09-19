@@ -16,6 +16,9 @@
 # - Changed and added drives
 # - Changed and added network interfaces
 #
+# THIS IS A SMALLER VARIANT FOR USE ON FHD LAPTOP SCREENS. FOR DESKTOP OR HIGHER
+# RESOLUTION DISPLAYS, LOAD THE CONFIGURATION FROM .config/conky.
+#
 #=====================================================================================
 #                               arcolinux
 # Date    : package-date
