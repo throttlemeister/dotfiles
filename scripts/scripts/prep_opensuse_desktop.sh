@@ -15,6 +15,8 @@
 # 1.3 - Removed entry for doownloading Lazy-vim as it is now
 #       integrated into the dotfules repo as a submodule.
 #       (should we do this for our own ansible repo too?)
+# 1.4 - Changed script and added ansible repo to dotfiles as
+#       a new submodule so we can do a single pull
 
 # User to setup profile and other files for
 SETUP_USER=throttlemeister
