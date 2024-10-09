@@ -12,9 +12,13 @@
 #       and egg problem)
 # 1.2 - Make sure the script can be run from anywhere and
 #       is not dependent on the location under ansible.
+# 1.3 - Removed entry for doownloading Lazy-vim as it is now
+#       integrated into the dotfules repo as a submodule.
+#       (should we do this for our own ansible repo too?)
 
 # User to setup profile and other files for
 SETUP_USER=throttlemeister
+DOT_DIR=.dotfiles
 
 # Check if git is installed and install if necessary
 if ! command -v git >/dev/null; then
@@ -23,11 +27,12 @@ if ! command -v git >/dev/null; then
   sudo zypper --non-interactive in -y git
 fi
 
-# Clone ansible repo and setup basic profile
+# Clone dotfiles repo with submodule sand setup basic profile
 cd /home/$SETUP_USER/
-git clone git@github.com:throttlemeister/ansible.git
+mkdir $DOT_DIR && cd $DOT_DIR
+git clone git@github.com:throttlemeister/dotfiles.git .
 cd /home/$SETUP_USER
-tar xvfz ansible/files/profile_local.tar.gz
+tar xvfz $DOT_DIR/ansible/files/profile_local.tar.gz
 
 # Check if Ansible is installed
 if ! command -v ansible-playbook >/dev/null; then
@@ -37,14 +42,7 @@ if ! command -v ansible-playbook >/dev/null; then
 fi
 
 # Run the Ansible playbook to install standard packages
-ansible-playbook /home/$SETUP_USER/ansible/files/install_pkg_opensuse.yml
+ansible-playbook /home/$SETUP_USER/$DOT_DIR/ansible/files/install_pkg_opensuse.yml
 
-# Clone dotfiles repo and use stow to setup the rest of the stuff
-cd /home/$SETUP_USER/
-mkdir .dotfiles
-cd .dotfiles
-git clone git@github.com:throttlemeister/dotfiles.git .
+# Setup user configuration using stow to setup the rest of the stuff
 stow *
-
-# Finally setup LazyVIM so we can have a nice VI experience.
-git clone https://github.com/LazyVim/starter /home/$SETUP_USER/.config/nvim
