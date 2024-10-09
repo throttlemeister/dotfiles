@@ -17,6 +17,7 @@
 #       (should we do this for our own ansible repo too?)
 # 1.4 - Changed script and added ansible repo to dotfiles as
 #       a new submodule so we can do a single pull
+# 1.5 - Corrected a PATH
 
 # User to setup profile and other files for
 SETUP_USER=throttlemeister
@@ -34,7 +35,7 @@ cd /home/$SETUP_USER/
 mkdir $DOT_DIR && cd $DOT_DIR
 git clone git@github.com:throttlemeister/dotfiles.git .
 cd /home/$SETUP_USER
-tar xvfz $DOT_DIR/ansible/files/profile_local.tar.gz
+tar xvfz $DOT_DIR/ansible/ansible/files/profile_local.tar.gz
 
 # Check if Ansible is installed
 if ! command -v ansible-playbook >/dev/null; then
