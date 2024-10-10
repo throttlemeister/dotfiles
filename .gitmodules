@@ -1,6 +1,0 @@
-[submodule "nvim/.config/nvim"]
-	path = nvim/.config/nvim
-	url = https://github.com/LazyVim/starter
-[submodule "ansible/ansible"]
-	path = ansible/ansible
-	url = git@github.com:throttlemeister/ansible

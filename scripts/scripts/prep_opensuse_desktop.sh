@@ -18,6 +18,8 @@
 # 1.4 - Changed script and added ansible repo to dotfiles as
 #       a new submodule so we can do a single pull
 # 1.5 - Corrected a PATH
+# 1.6 - Reverted back to seperate ansible and nvim repos ansible
+#       dealing with submodules is a bit too much hassle for now.
 
 # User to setup profile and other files for
 SETUP_USER=throttlemeister
@@ -30,12 +32,10 @@ if ! command -v git >/dev/null; then
   sudo zypper --non-interactive in -y git
 fi
 
-# Clone dotfiles repo with submodule sand setup basic profile
-cd /home/$SETUP_USER/
-mkdir $DOT_DIR && cd $DOT_DIR
-git clone git@github.com:throttlemeister/dotfiles.git .dotfiles --recurse-submodules
+# Clone the ansible repo and extract basic profile
 cd /home/$SETUP_USER
-tar xvfz $DOT_DIR/ansible/ansible/files/profile_local.tar.gz
+git clone git@github.com:throttlemeister/ansible
+tar xvfz ansible/files/profile_local.tar.gz
 
 # Check if Ansible is installed
 if ! command -v ansible-playbook >/dev/null; then
@@ -45,7 +45,13 @@ if ! command -v ansible-playbook >/dev/null; then
 fi
 
 # Run the Ansible playbook to install standard packages
-ansible-playbook /home/$SETUP_USER/$DOT_DIR/ansible/files/install_pkg_opensuse.yml
+ansible-playbook /home/$SETUP_USER/ansible/files/install_pkg_opensuse.yml
 
 # Setup user configuration using stow to setup the rest of the stuff
+cd /home/$SETUP_USER/
+mkdir $DOT_DIR && cd $DOT_DIR
+git clone git@github.com:throttlemeister/dotfiles.git .dotfiles
 stow *
+
+# Setup Neovim by cloning LazyVim
+git clone https://github.com/LazyVim/starter /home/$SETUP_USER/.config/nvim
