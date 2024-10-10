@@ -33,7 +33,7 @@ fi
 # Clone dotfiles repo with submodule sand setup basic profile
 cd /home/$SETUP_USER/
 mkdir $DOT_DIR && cd $DOT_DIR
-git clone git@github.com:throttlemeister/dotfiles.git .
+git clone git@github.com:throttlemeister/dotfiles.git .dotfiles --recurse-submodules
 cd /home/$SETUP_USER
 tar xvfz $DOT_DIR/ansible/ansible/files/profile_local.tar.gz
 
