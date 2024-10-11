@@ -7,7 +7,7 @@ clipboard = false
 [ keybindings ]
 
 # Alt + S
-state = \es
+#state = \es
 
 # Alt + E
 stage = \ee
