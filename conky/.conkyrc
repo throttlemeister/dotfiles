@@ -149,7 +149,7 @@ conky.config = {
 	color2 = '#D9DDE2',
 	color3 = '#cccccc',
 	color4 = '#D9BC83',
-	color5 = '#52a2da',                         --teal 00BFFF, now using Fedora Blue
+	color5 = '#35b9ab',                         --teal 00BFFF, now using Fedora Blue
 	color6 = '#FFFFFF',                         --white
 
 	--Signal Colours
