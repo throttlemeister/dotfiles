@@ -50,7 +50,7 @@ fi
 # Run the Ansible playbook to install standard packages
 ansible-playbook $SETUP_USER_DIR/ansible/files/install_pkg_opensuse.yml
 
-# Setup user configuration using stow to setup the rest of the stuff
+# Setup user configuration (dotfiles) using stow to setup the rest of the stuff
 cd $SETUP_USER_DIR
 git clone git@github.com:throttlemeister/dotfiles.git .dotfiles
 cd $DOT_DIR
