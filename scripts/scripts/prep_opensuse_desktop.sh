@@ -4,6 +4,8 @@
 # I like and some core utulities that I want to have installed
 # on any of my systems.
 #
+# *** PLEASE RUN THIS SCRIPT AS ROOT, OR IT WILL FAIL ***
+#
 # History:
 # 1.0 - Modified from a generic, distro independant script
 #       one that is specific for OpenSUSE.
@@ -21,6 +23,10 @@
 # 1.6 - Reverted back to seperate ansible and nvim repos ansible
 #       dealing with submodules is a bit too much hassle for now.
 # 1.7 - Clean up and some small adjustments.
+# 1.8 - Added section to check if the user is present on the systems
+#       and if not, to create the user. And since we can br
+#       deploying for another user as our own, we need to make sure
+#       the files are all ownned by the correct user.
 
 # User to setup profile and other files for but first set some
 # vaiables.
@@ -28,11 +34,18 @@ SETUP_USER=throttlemeister
 DOT_DIR=.dotfiles
 SETUP_USER_DIR=/home/$SETUP_USER
 
+# Check if $SETUP_USER exists, and if not, create the user first
+if id "$SETUP_USER" &>/dev/null; then
+  echo "Useer $SETUP_USER exists, continuing.."
+else
+  useradd -s /bin/fish -m $SETUP_USER
+fi
+
 # Check if git is installed and install if necessary
 if ! command -v git >/dev/null; then
   echo "Git not installed. Installing now..."
   # install git
-  sudo zypper --non-interactive in -y git
+  zypper --non-interactive in -y git
 fi
 
 # Clone the ansible repo and extract basic profile
@@ -44,7 +57,7 @@ tar xvfz ansible/files/profile_local.tar.gz
 if ! command -v ansible-playbook >/dev/null; then
   echo "Ansible is not installed. Installing Ansible now..."
   # Install Ansible
-  sudo zypper --non-interactive in ansible
+  zypper --non-interactive in ansible
 fi
 
 # Run the Ansible playbook to install standard packages
@@ -58,3 +71,9 @@ stow *
 
 # Setup Neovim by cloning LazyVim
 git clone https://github.com/LazyVim/starter $SETUP_USER_DIR/.config/nvim
+
+# Ensure all files in $SETUP_USER_DIR are owned by the user
+chown -R $SETUP_USER:users $SETUP_USER_DIR
+
+# We're done. Do check our handywork :)
+echo "Tasks complete..."
