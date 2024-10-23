@@ -11,7 +11,7 @@ import = [
 ]
 
 [colors.primary]
-foreground = "#c5c8c6"
+#foreground = "#c5c8c6"
 
 [env]
 TERM = "xterm-256color"
