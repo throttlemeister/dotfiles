@@ -69,8 +69,14 @@ git clone git@github.com:throttlemeister/dotfiles.git .dotfiles
 cd $DOT_DIR
 stow *
 
-# Setup Neovim by cloning LazyVim
+# We need to clome a few github repositories that we need.
+#
+# Setup Neovim by cloning LazyVim (yeeh)
+cd $SETUP_USER_DIR
 git clone https://github.com/LazyVim/starter $SETUP_USER_DIR/.config/nvim
+# Let's make sure we can also do webdevelopment
+git clone https://github.com/throttlemeister/crashdot.com.git
+git clone https://github.com/throttlemeister/sport-touring.eu.git
 
 # Ensure all files in $SETUP_USER_DIR are owned by the user
 chown -R $SETUP_USER:users $SETUP_USER_DIR
