@@ -64,6 +64,7 @@ function fish_prompt
     set -g __fish_git_prompt_showstashstate 1
     set -g __fish_git_prompt_color_prefix yellow
     set -g __fish_git_prompt_color_suffix yellow
+    set -g __fish_git_prompt_color yellow
     if [ (id -u) = 0 ]
         echo -n (set_color yellow)"╭─"(set_color normal)
     else
