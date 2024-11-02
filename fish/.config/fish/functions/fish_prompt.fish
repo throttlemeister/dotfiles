@@ -24,27 +24,27 @@ function __current_path
     end
 end
 
-function _git_branch_name
-    echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
-end
-
-function _git_is_dirty
-    echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
-end
-
-function __git_status
-    if [ (_git_branch_name) ]
-        set -l git_branch (_git_branch_name)
-
-        if [ (_git_is_dirty) ]
-            set git_info '['$git_branch"+"']'
-        else
-            set git_info '['$git_branch']'
-        end
-
-        echo -n (set_color yellow) $git_info (set_color normal)
-    end
-end
+#function _git_branch_name
+#    echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
+#end
+#
+#function _git_is_dirty
+#    echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
+#end
+#
+#function __git_status
+#    if [ (_git_branch_name) ]
+#        set -l git_branch (_git_branch_name)
+#
+#        if [ (_git_is_dirty) ]
+#            set git_info '['$git_branch"+"']'
+#        else
+#            set git_info '['$git_branch']'
+#        end
+#
+#        echo -n (set_color yellow) $git_info (set_color normal)
+#    end
+#end
 
 function __in_cont
     if [ -z $CONTAINER_ID ]
@@ -56,6 +56,14 @@ function __in_cont
 end
 
 function fish_prompt
+    set -g __fish_git_prompt_show_informative_status 1
+    set -g __fish_git_prompt_showdirtystate 1
+    set -g __fish_git_prompt_showuntrackedfiles 1
+    set -g __fish_git_prompt_showupstream informative
+    set -g __fish_git_prompt_showcolorhints 1
+    set -g __fish_git_prompt_showstashstate 1
+    set -g __fish_git_prompt_color_prefix yellow
+    set -g __fish_git_prompt_color_suffix yellow
     if [ (id -u) = 0 ]
         echo -n (set_color yellow)"╭─"(set_color normal)
     else
@@ -64,7 +72,8 @@ function fish_prompt
     __in_cont
     __user_host
     __current_path
-    __git_status
+    # __git_status
+    fish_git_prompt
     echo -e ''
     if [ (id -u) = 0 ]
         echo (set_color yellow)"╰─""❯  "(set_color normal)
