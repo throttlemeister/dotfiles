@@ -57,9 +57,9 @@ end
 
 function fish_prompt
     if [ (id -u) = 0 ]
-        echo -n (set_color --bold yellow)"╭─"(set_color normal)
+        echo -n (set_color yellow)"╭─"(set_color normal)
     else
-        echo -n (set_color --bold blue)"╭─"(set_color normal)
+        echo -n (set_color blue)"╭─"(set_color normal)
     end
     __in_cont
     __user_host
@@ -67,9 +67,9 @@ function fish_prompt
     __git_status
     echo -e ''
     if [ (id -u) = 0 ]
-        echo (set_color --bold yellow)"╰─""# "(set_color normal)
+        echo (set_color yellow)"╰─""❯  "(set_color normal)
     else
-        echo (set_color --bold blue)"╰─""\$ "(set_color normal)
+        echo (set_color blue)"╰─"(set_color --bold green)"❯ "(set_color normal)
     end
 end
 
