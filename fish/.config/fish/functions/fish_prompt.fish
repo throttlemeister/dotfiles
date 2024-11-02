@@ -18,33 +18,11 @@ end
 
 function __current_path
     if [ (id -u) = 0 ]
-        echo -n (set_color --bold yellow)-[(set_color --bold white)(prompt_pwd)(set_color --bold yellow)] (set_color normal)
+        echo -n (set_color --bold yellow)-[(set_color --bold white)(prompt_pwd)(set_color --bold yellow)](set_color normal)
     else
-        echo -n (set_color --bold blue)-[(set_color --bold white)(prompt_pwd)(set_color --bold blue)] (set_color normal)
+        echo -n (set_color --bold blue)-[(set_color --bold white)(prompt_pwd)(set_color --bold blue)](set_color normal)
     end
 end
-
-#function _git_branch_name
-#    echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')
-#end
-#
-#function _git_is_dirty
-#    echo (command git status -s --ignore-submodules=dirty 2> /dev/null)
-#end
-#
-#function __git_status
-#    if [ (_git_branch_name) ]
-#        set -l git_branch (_git_branch_name)
-#
-#        if [ (_git_is_dirty) ]
-#            set git_info '['$git_branch"+"']'
-#        else
-#            set git_info '['$git_branch']'
-#        end
-#
-#        echo -n (set_color yellow) $git_info (set_color normal)
-#    end
-#end
 
 function __in_cont
     if [ -z $CONTAINER_ID ]
