@@ -1,10 +1,9 @@
 # This theme is based on Bira theme from oh-my-fish (https://github.com/oh-my-fish/theme-bira)
-# This theme also based on the default bash prompt of Kali Linux. (https://www.kali.org/)
-# Created, modified and where possible bluntly stolen by throttlemeister.
 #
-# Bira theme from oh-my-fish listed abouve, based on:
-# Theme based on Bira theme from oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/bira.zsh-theme
-# Some code stolen from oh-my-fish clearance theme: https://github.com/bpinto/oh-my-fish/blob/master/themes/clearance/
+# This is a two line prompt theme. It shows user@host, path and git status on the left, and a command
+# duraction on the right side.
+#
+# Createed by throttlemeister (https://www.github.com/theottlemeister)
 
 function __user_host
     set fqdn (hostnamectl hostname)
@@ -34,6 +33,7 @@ function __in_cont
 end
 
 function fish_prompt
+    # Set some variables for git status
     set -g __fish_git_prompt_show_informative_status 1
     set -g __fish_git_prompt_showdirtystate 1
     set -g __fish_git_prompt_showuntrackedfiles 1
@@ -51,7 +51,6 @@ function fish_prompt
     __in_cont
     __user_host
     __current_path
-    # __git_status
     fish_git_prompt
     echo -e ''
     if [ (id -u) = 0 ]
