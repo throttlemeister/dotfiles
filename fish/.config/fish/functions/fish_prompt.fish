@@ -54,7 +54,7 @@ function fish_prompt
     fish_git_prompt
     echo -e ''
     if [ (id -u) = 0 ]
-        echo (set_color yellow)"╰─""❯  "(set_color normal)
+        echo (set_color yellow)"╰─"(set_color red)"❯ "(set_color normal)
     else
         echo (set_color blue)"╰─"(set_color --bold green)"❯ "(set_color normal)
     end
