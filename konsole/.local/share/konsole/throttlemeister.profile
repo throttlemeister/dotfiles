@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=throttlemeister
-Font=Iosevka,12,-1,5,50,0,0,0,0,0
+Font=Iosevka Fixed,12.5,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
 Command=/usr/bin/fish
