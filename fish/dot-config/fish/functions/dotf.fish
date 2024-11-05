@@ -2,7 +2,7 @@
 #
 function dotf -d "Use stow with extra parameters"
     if command -sq stow
-        stow -d ~/.dotfiles/ $argv --ignore=.directory --dotfiles
+        stow -d ~/.dotfiles/ $argv --ignore=.directory --ignore=README.md --dotfiles
     else
         echo "Stow not installed. Please install before using."
     end
