@@ -7,6 +7,6 @@ The prompt (fish_prompt), based on Oh-My-Fish Bira theme and the standard Kali L
 Bira theme from oh-my-fish (https://github.com/oh-my-fish/theme-bira) was based on Bira theme from oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/bira.zsh-theme) and the oh-my-fish Clearance theme (https://github.com/bpinto/oh-my-fish/blob/master/themes/clearance/)
 \
 \
-![Alt text](https://raw.githubusercontent.com/throttlemeister/dotfiles/refs/heads/master/fish/.config/fish/prompt.png "prompt")
+![Alt text](https://raw.githubusercontent.com/throttlemeister/dotfiles/refs/heads/master/fish/dot-config/fish/prompt.png "prompt")
 
 It has many functions and sports a transient prompt, and show the time a command has run for.
