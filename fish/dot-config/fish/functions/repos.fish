@@ -2,19 +2,29 @@
 #
 function repos -d "This function will synchornize all git repositories"
     set _oldpath $PWD
-    echo "Pull dotfiles repo.."
+    echo "==========================================="
+    echo "===========Pull dotfiles repo..============"
+    echo "==========================================="
     cd ~/.dotfiles/
     pull
-    echo "Pull ansible repo.."
+    echo "==========================================="
+    echo "============Pull ansible repo..============"
+    echo "==========================================="
     cd ~/ansible/
     pull
-    echo "Pull wallpaper repo.."
+    echo "==========================================="
+    echo "===========Pull wallpaper repo..==========="
+    echo "==========================================="
     cd ~/Pictures/wallpaper/
     pull
-    echo "Pull crashdot.com repo.."
+    echo "==========================================="
+    echo "=========Pull crashdot.com repo..=========="
+    echo "==========================================="
     cd ~/web/crashdot.com/
     pull
-    echo "Pull sport-touring.eu repo.."
+    echo "==========================================="
+    echo "=======Pull sport-touring.eu repo..========"
+    echo "==========================================="
     cd ~/web/sport-touring.eu/
     pull
     cd $_oldpath
