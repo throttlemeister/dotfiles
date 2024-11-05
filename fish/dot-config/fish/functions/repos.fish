@@ -8,6 +8,9 @@ function repos -d "This function will synchornize all git repositories"
     echo "Pull ansible repo.."
     cd ~/ansible/
     pull
+    echo "Pull wallpaper repo.."
+    cd ~/Pictures/wallpaper/
+    pull
     echo "Pull crashdot.com repo.."
     cd ~/web/crashdot.com/
     pull
