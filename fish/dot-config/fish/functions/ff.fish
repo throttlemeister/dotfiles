@@ -1,9 +1,9 @@
 function ff -d 'fastfetch shortcut'
     if type --quiet fastfetch
         if test -n "$ALACRITTY_WINDOW_ID"
-            fastfetch -l opensuse $argv
+            fastfetch -l opensuse -c examples/6.jsonc $argv
         else
-            fastfetch -l ~/ansible/files/twgrey.png --logo-type iterm --logo-padding-top 2 --logo-width 45 $argv
+            fastfetch -l ~/ansible/files/twgrey.png --logo-type iterm --logo-padding-top 2 --logo-width 45 -c examples/6.jsonc $argv
         end
     else
         command neofetch $argv
