@@ -67,7 +67,7 @@ ansible-playbook $SETUP_USER_DIR/ansible/files/install_pkg_opensuse.yml
 cd $SETUP_USER_DIR
 git clone git@github.com:throttlemeister/dotfiles.git .dotfiles
 cd $DOT_DIR
-stow *
+stow * --ignore=.directory --ignore=README.md --dotfiles
 
 # We need to clome a few github repositories that we need.
 #
