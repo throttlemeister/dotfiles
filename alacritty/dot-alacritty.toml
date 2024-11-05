@@ -21,8 +21,8 @@ size = 12.5
 
 [font.normal]
 family = "IosevkaTerm NF"
-#family = "MesloLGS NF"
-style = "Regular"
+#family = "Anka/Coder Narrow"
+style = "Condensed"
 
 [selection]
 save_to_clipboard = true
