@@ -5,3 +5,4 @@
 	insteadOf = https://github.com/
 [core]
 	editor = nvim
+	excludesFile = /home/throttlemeister/.gitignore
