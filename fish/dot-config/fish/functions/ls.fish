@@ -1,6 +1,6 @@
 function ls -d 'eza instead of ls'
   if type --quiet eza && test "$argv[1]" != "-ltr"
-    eza --header --group-directories-first --git $argv
+    eza --header --group-directories-first --git --icons=auto $argv
   else
     command ls --color=always $argv
   end
