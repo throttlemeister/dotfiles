@@ -35,6 +35,7 @@ opacity = 0.75
 blur = true
 padding.x = 5
 padding.y =5
+dynamic_title = true
 
 [window.dimensions]
 columns = 135
