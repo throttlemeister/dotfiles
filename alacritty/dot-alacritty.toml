@@ -1,14 +1,3 @@
-live_config_reload = true
-
-import = [
-  # uncomment the flavour you want below:
-  #"~/.config/alacritty/catppuccin-latte.toml"
-  # "~/.config/alacritty/catppuccin-frappe.toml"
-  # "~/.config/alacritty/catppuccin-macchiato.toml"
-  # "~/.config/alacritty/catppuccin-mocha.toml"
-  # "~/.config/alacritty/ashes-dark.toml"
-  #"~/.config/alacritty/dracula.toml"
-]
 
 [colors.primary]
 #foreground = "#c5c8c6"
@@ -27,7 +16,7 @@ style = "Condensed"
 [selection]
 save_to_clipboard = true
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/fish"
 
 [window]
@@ -40,3 +29,18 @@ dynamic_title = true
 [window.dimensions]
 columns = 135
 lines = 35
+
+[general]
+live_config_reload = true
+
+import = [
+  # uncomment the flavour you want below:
+  #"~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+  # "~/.config/alacritty/ashes-dark.toml"
+  #"~/.config/alacritty/dracula.toml"
+]
+
+[terminal]
