@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=throttlemeister
-Font=Iosevka Nerd Font Mono,12.5,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+Font=IosevkaTerm Nerd Font,12.5,-1,5,300,0,0,0,0,0,0,0,0,0,0,1,Light
 
 [General]
 Command=/usr/bin/fish
