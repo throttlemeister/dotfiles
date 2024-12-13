@@ -11,7 +11,7 @@ size = 12.5
 [font.normal]
 family = "IosevkaTerm NF"
 #family = "Anka/Coder Narrow"
-style = "Condensed"
+style = "Light Condensed"
 
 [selection]
 save_to_clipboard = true
@@ -38,7 +38,7 @@ import = [
   #"~/.config/alacritty/catppuccin-latte.toml"
   # "~/.config/alacritty/catppuccin-frappe.toml"
   # "~/.config/alacritty/catppuccin-macchiato.toml"
-  # "~/.config/alacritty/catppuccin-mocha.toml"
+   "~/.config/alacritty/catppuccin-mocha.toml"
   # "~/.config/alacritty/ashes-dark.toml"
   #"~/.config/alacritty/dracula.toml"
 ]
