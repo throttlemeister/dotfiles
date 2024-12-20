@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=throttlemeister
+ColorScheme=catppuccin-mocha
 Font=IosevkaTerm Nerd Font,12.5,-1,5,300,0,0,0,0,0,0,0,0,0,0,1,Light
 
 [General]
