@@ -164,12 +164,6 @@ conky.config = {
 
 conky.text = [[
 ${color5}${hr 2}${color}
-${color5}${font Roboto:size=10}${voffset 2}I N F O  P A N E L   ${font}${color}
-${color5}${hr 2}${color}
-Current weather
-${texeci 500 curl 'wttr.in/Almelo?format=%l:+%c+%t+(%f)+%m'}
-${texeci 500 curl 'wttr.in/Almelo?format=Sunrise+%S+Sunset+%s'}
-${color5}${hr 2}${color}
 ${color5}${font Roboto:size=10}${voffset 2}S Y S T E M   ${font}${color}
 ${color5}${hr 2}${color}
 ${color2}Hostname:${color} ${alignr}${nodename}
