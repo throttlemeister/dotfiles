@@ -4,10 +4,9 @@ function zypper --wraps='sudo zypper'
         sudo zypper dup
     else
         if test $argv[1] = rm
-            sudo zypper rm --clean-deps argv[2]
+            sudo zypper rm --clean-deps $argv[2]
         else
             sudo zypper $argv
         end
     end
 end
-
