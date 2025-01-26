@@ -13,25 +13,32 @@ function fish_greeting
 
         # First make sure we have the latest version of code from git. If it's 
         # not there, we clone the repo.
-        if test -d $HOME/.dotfiles/.git
-            set _oldpath $PWD
-            cd $HOME/.dotfiles
-            git pull 1>/dev/null
-            cd $_oldpath
-        end
-
-        # We do that for the Ansible directory too
-        if test -d $HOME/ansible/.git
-            set _oldpath $PWD
-            cd $HOME/ansible
-            git pull 1>/dev/null
-            cd
-            cd $_oldpath
+        # Also, we only attempt this if there is a network connecttion!
+        set __link (ip link ls | grep 'state UP')
+        if [ -z $__link ]
+            echo -e "\nNo network detected; skipping configuration checks...\n"
         else
-            set _oldpath $PWD
-            cd $HOME
-            git clone https://github.com/throttlemeister/ansible.git
-            cd $_oldpath
+            echo -e "\nChecking configurationse...\n"
+            if test -d $HOME/.dotfiles/.git
+                set _oldpath $PWD
+                cd $HOME/.dotfiles
+                git pull 1>/dev/null
+                cd $_oldpath
+            end
+
+            # We do that for the Ansible directory too
+            if test -d $HOME/ansible/.git
+                set _oldpath $PWD
+                cd $HOME/ansible
+                git pull 1>/dev/null
+                cd
+                cd $_oldpath
+            else
+                set _oldpath $PWD
+                cd $HOME
+                git clone https://github.com/throttlemeister/ansible.git
+                cd $_oldpath
+            end
         end
         # GitHub way of authenticating changed, so we do not use this anymore.
         # Housekeeping.
