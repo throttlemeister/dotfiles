@@ -9,8 +9,6 @@ function fish_greeting
         else
             inxi -S && inxi
         end
-        #cd
-
         # First make sure we have the latest version of code from git. If it's 
         # not there, we clone the repo.
         # Also, we only attempt this if there is a network connecttion!
@@ -25,7 +23,6 @@ function fish_greeting
                 git pull 1>/dev/null
                 cd $_oldpath
             end
-
             # We do that for the Ansible directory too
             if test -d $HOME/ansible/.git
                 set _oldpath $PWD
