@@ -8,5 +8,9 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
+    {
+      "nickeb96/fish.vim",
+      lazy = true,
+    },
   },
 }
