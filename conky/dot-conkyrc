@@ -15,6 +15,7 @@
 # - Changed number of top processes for memory
 # - Changed and added drives
 # - Changed and added network interfaces
+# - Added CPU history to "PROCESSPRS" section
 #
 # THIS IS A SMALLER VARIANT FOR USE ON FHD LAPTOP SCREENS. FOR DESKTOP OR HIGHER
 # RESOLUTION DISPLAYS, LOAD THE CONFIGURATION FROM .config/conky.
