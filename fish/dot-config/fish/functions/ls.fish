@@ -1,17 +1,17 @@
 function ls -d 'eza instead of ls'
-  if type --quiet eza && test "$argv[1]" != "-ltr"
-    eza --header --group-directories-first --git --icons=auto $argv
-  else
-    command ls --color=always $argv
-  end
+    if type --quiet eza && test "$argv[1]" != -ltr
+        eza --header --group-directories-first --git --icons=auto $argv
+    else
+        command ls --color=always $argv
+    end
 end
 
 function ll
-  if command -sq eza
-    ls -laa -g $argv
-  else
-    command ls -la $argv
-  end
+    if command -sq eza
+        ls -laa -g $argv
+    else
+        command ls -la $argv
+    end
 end
 
 function l
@@ -19,9 +19,17 @@ function l
 end
 
 function lt
-  if command -sq eza
-    ls -laa -snew -g $argv;
-  else
-    command ls -ltr $argv;
-  end
+    if command -sq eza
+        ls -laa -snew -g $argv
+    else
+        command ls -ltr $argv
+    end
+end
+
+function lls
+    if command -sq eza
+        ls -laa -g --sort=size $argv
+    else
+        command ls -lahS
+    end
 end
