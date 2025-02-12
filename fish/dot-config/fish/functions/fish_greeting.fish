@@ -18,7 +18,7 @@ function fish_greeting
         if [ -z $__link ]
             echo -e "\nNo network detected; skipping configuration checks...\n"
         else
-            echo -e "\nChecking configurationse...\n"
+            echo -e "\nChecking configurations...\n"
             if test -d $HOME/.dotfiles/.git
                 set _oldpath $PWD
                 cd $HOME/.dotfiles
