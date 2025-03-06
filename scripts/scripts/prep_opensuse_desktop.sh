@@ -50,7 +50,7 @@ fi
 
 # Clone the ansible repo and extract basic profile
 cd $SETUP_USER_DIR
-git clone git@github.com:throttlemeister/ansible
+git clone https://github.com/throttlemeister/ansible
 tar xvfz ansible/files/profile_local.tar.gz
 
 # Check if Ansible is installed
@@ -65,7 +65,7 @@ ansible-playbook $SETUP_USER_DIR/ansible/files/install_pkg_opensuse.yml
 
 # Setup user configuration (dotfiles) using stow to setup the rest of the stuff
 cd $SETUP_USER_DIR
-git clone git@github.com:throttlemeister/dotfiles.git .dotfiles
+git clone https://github.com/throttlemeister/dotfiles.git .dotfiles
 cd $DOT_DIR
 stow * --ignore=.directory --ignore=README.md --dotfiles
 
@@ -75,8 +75,9 @@ stow * --ignore=.directory --ignore=README.md --dotfiles
 cd $SETUP_USER_DIR
 git clone https://github.com/LazyVim/starter $SETUP_USER_DIR/.config/nvim
 # Let's make sure we can also do webdevelopment
-git clone https://github.com/throttlemeister/crashdot.com.git
-git clone https://github.com/throttlemeister/sport-touring.eu.git
+mkdir web
+git clone https://github.com/throttlemeister/crashdot.com.git web/crashdot.com
+git clone https://github.com/throttlemeister/sport-touring.eu.git web/sport-touring.eu
 
 # Ensure all files in $SETUP_USER_DIR are owned by the user
 chown -R $SETUP_USER:users $SETUP_USER_DIR
