@@ -180,10 +180,10 @@ ${color2}CPU Freq:${color} $alignr${freq}MHz
 ${color2}CPU Temp:${color} $alignr ${acpitemp}°C
 ${color2}CPU Usage: ${color} $alignr ${cpu}% 
 ${color5}${cpubar cpu0 10,299}
-${color2}CPU Core 1:${color} ${alignr}${offset -10}${cpu cpu1}% ${alignr}${color5}${cpubar cpu1}${goto 170}Core  2:${color} ${cpu cpu2}%${alignr}${cpubar cpu2 10,50}
-${color2}CPU Core 3:${color} ${alignr}${offset -10}${cpu cpu3}% ${alignr}${color5}${cpubar cpu3}${goto 170}Core  4:${color} ${cpu cpu4}%${alignr}${cpubar cpu4 10,50}
-${color2}CPU Core 5:${color} ${alignr}${offset -10}${cpu cpu5}% ${alignr}${color5}${cpubar cpu5}${goto 170}Core  6:${color} ${cpu cpu6}%${alignr}${cpubar cpu6 10,50}
-${color2}CPU Core 7:${color} ${alignr}${offset -10}${cpu cpu7}% ${alignr}${color5}${cpubar cpu7}${goto 170}Core  8:${color} ${cpu cpu8}%${alignr}${cpubar cpu8 10,50}
+${color2}CPU Core 1:${color} ${cpu cpu1}% ${color5}${goto 120}${cpubar cpu1 10,50}${color}${goto 185}Core  2:${color} ${cpu cpu2}%${alignr}$color5}${cpubar cpu2 10,50}
+${color2}CPU Core 3:${color} ${cpu cpu3}% ${color5}${goto 120}${cpubar cpu3 10,50}${color}${goto 185}Core  4:${color} ${cpu cpu4}%${alignr}$color5}${cpubar cpu4 10,50}
+${color2}CPU Core 5:${color} ${cpu cpu5}% ${color5}${goto 120}${cpubar cpu5 10,50}${color}${goto 185}Core  6:${color} ${cpu cpu6}%${alignr}$color5}${cpubar cpu6 10,50}
+${color2}CPU Core 7:${color} ${cpu cpu7}% ${color5}${goto 120}${cpubar cpu7 10,50}${color}${goto 185}Core  8:${color} ${cpu cpu8}%${alignr}$color5}${cpubar cpu8 10,50}
 ${color7}Top Processes ${alignr}CPU% Mem% 
 ${color}${top name 1} ${alignr}${offset -10$}${top cpu 1} ${top mem 1}
 ${color}${top name 2} ${alignr}${offset -10$}${top cpu 2} ${top mem 2}
@@ -213,7 +213,7 @@ ${color5}${hr 2}${color}
 ${color7}IP Address eth0: ${color} ${alignr}${offset -10$}${addrs enp0s31f6}
 ${color2}Eth Up:${color} ${alignr}${offset -10$}${upspeed enp0s31f6}${alignr}${color5}${upspeedgraph enp0s31f6 15,175}
 ${color2}Eth Down:${color} ${alignr}${offset -10$}${downspeed enp0s31f6}${alignr}${color5}${downspeedgraph enp0s31f6 15,175}
-${color7}IP Address wlan: ${color} ${alignr}${offset -10$}${addrs wlp4s0}
-${color2}WL Up:${color} ${alignr}${offset -10$}${upspeed wlp4s0}${alignr}${color5}${upspeedgraph wlp4s0 15,175}
-${color2}WL Down:${color} ${alignr}${offset -10$}${downspeed wlp4s0}${alignr}${color5}${downspeedgraph wlp4s0 15,175}
+${color7}IP Address wlan: ${color} ${alignr}${offset -10$}${addrs wlp3s0}
+${color2}WL Up:${color} ${alignr}${offset -10$}${upspeed wlp3s0}${alignr}${color5}${upspeedgraph wlp3s0 15,175}
+${color2}WL Down:${color} ${alignr}${offset -10$}${downspeed wlp3s0}${alignr}${color5}${downspeedgraph wlp3s0 15,175}
 ]];
