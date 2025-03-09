@@ -180,10 +180,10 @@ ${color2}CPU Freq:${color} $alignr${freq}MHz
 ${color2}CPU Temp:${color} $alignr ${acpitemp}°C
 ${color2}CPU Usage: ${color} $alignr ${cpu}% 
 ${color5}${cpubar cpu0 10,299}
-${color2}CPU Core 1:${color} ${cpu cpu1}% ${color5}${goto 120}${cpubar cpu1 10,50}${color}${goto 185}Core  2:${color} ${cpu cpu2}%${alignr}$color5}${cpubar cpu2 10,50}
-${color2}CPU Core 3:${color} ${cpu cpu3}% ${color5}${goto 120}${cpubar cpu3 10,50}${color}${goto 185}Core  4:${color} ${cpu cpu4}%${alignr}$color5}${cpubar cpu4 10,50}
-${color2}CPU Core 5:${color} ${cpu cpu5}% ${color5}${goto 120}${cpubar cpu5 10,50}${color}${goto 185}Core  6:${color} ${cpu cpu6}%${alignr}$color5}${cpubar cpu6 10,50}
-${color2}CPU Core 7:${color} ${cpu cpu7}% ${color5}${goto 120}${cpubar cpu7 10,50}${color}${goto 185}Core  8:${color} ${cpu cpu8}%${alignr}$color5}${cpubar cpu8 10,50}
+${color2}CPU Core 1:${color} ${cpu cpu1}% ${color5}${goto 125}${cpubar cpu1 10,50}${color}${goto 180}Core  2:${color} ${cpu cpu2}%${alignr}$color5}${cpubar cpu2 10,50}
+${color2}CPU Core 3:${color} ${cpu cpu3}% ${color5}${goto 125}${cpubar cpu3 10,50}${color}${goto 180}Core  4:${color} ${cpu cpu4}%${alignr}$color5}${cpubar cpu4 10,50}
+${color2}CPU Core 5:${color} ${cpu cpu5}% ${color5}${goto 125}${cpubar cpu5 10,50}${color}${goto 180}Core  6:${color} ${cpu cpu6}%${alignr}$color5}${cpubar cpu6 10,50}
+${color2}CPU Core 7:${color} ${cpu cpu7}% ${color5}${goto 125}${cpubar cpu7 10,50}${color}${goto 180}Core  8:${color} ${cpu cpu8}%${alignr}$color5}${cpubar cpu8 10,50}
 ${color7}Top Processes ${alignr}CPU% Mem% 
 ${color}${top name 1} ${alignr}${offset -10$}${top cpu 1} ${top mem 1}
 ${color}${top name 2} ${alignr}${offset -10$}${top cpu 2} ${top mem 2}
