@@ -177,7 +177,8 @@ ${color2}CPU history:
 ${color5}${cpugraph -t -l}
 ${color5}${hr 2}${color}
 ${color2}CPU Freq:${color} $alignr${freq}MHz
-${color2}CPU Temp:${color} $alignr ${acpitemp}°C
+#${color2}CPU Temp:${color} $alignr ${exec sensors | grep 'Package id' | awk '{print $4}'} 
+${color2}CPU Temp:${color} $alignr ${hwmon 9 temp 1}°C 
 ${color2}CPU Usage: ${color} $alignr ${cpu}% 
 ${color5}${cpubar cpu0 10,299}
 ${color2}CPU Core 1:${color} ${cpu cpu1}% ${color5}${goto 125}${cpubar cpu1 10,50}${color}${goto 180}Core  2:${color} ${cpu cpu2}%${alignr}$color5}${cpubar cpu2 10,50}
