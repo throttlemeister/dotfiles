@@ -1,12 +1,15 @@
 # Defined in - @ line 1
 function zypper --wraps='sudo zypper'
-    if test $argv[1] = up
-        sudo zypper dup
-    else
-        if test $argv[1] = rm
+    switch $argv[1]
+        case up
+            sudo env ZYPP_PCK_PRELOAD=1 zypper dup
+        case dup
+            sudo env ZYPP_PCK_PRELOAD=1 zypper $argv
+        case rm
             sudo zypper rm --clean-deps $argv[2]
-        else
+        case ref
+            sudo env ZYPP_CURL2=1 zypper $argv
+        case '*'
             sudo zypper $argv
-        end
     end
 end

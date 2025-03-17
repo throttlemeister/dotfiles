@@ -211,10 +211,10 @@ ${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda3}${ali
 ${color5}${hr 2}${color}
 ${color5}${color5}${font Roboto:size=10}N E T W O R K   ${font}${color}
 ${color5}${hr 2}${color}
-${color7}IP Address eth0: ${color} ${alignr}${offset -10$}${addrs enp0s31f6}
-${color2}Eth Up:${color} ${alignr}${offset -10$}${upspeed enp0s31f6}${alignr}${color5}${upspeedgraph enp0s31f6 15,175}
-${color2}Eth Down:${color} ${alignr}${offset -10$}${downspeed enp0s31f6}${alignr}${color5}${downspeedgraph enp0s31f6 15,175}
-${color7}IP Address wlan: ${color} ${alignr}${offset -10$}${addrs wlp3s0}
-${color2}WL Up:${color} ${alignr}${offset -10$}${upspeed wlp3s0}${alignr}${color5}${upspeedgraph wlp3s0 15,175}
-${color2}WL Down:${color} ${alignr}${offset -10$}${downspeed wlp3s0}${alignr}${color5}${downspeedgraph wlp3s0 15,175}
+${color7}IP Address eth0: ${color} ${alignr}${offset -10$}${addrs eth0}
+${color2}Eth Up:${color} ${alignr}${offset -10$}${upspeed eth0}${alignr}${color5}${upspeedgraph eth0 15,175}
+${color2}Eth Down:${color} ${alignr}${offset -10$}${downspeed eth0}${alignr}${color5}${downspeedgraph eth0 15,175}
+${color7}IP Address wlan: ${color} ${alignr}${offset -10$}${addrs wlan0}
+${color2}WL Up:${color} ${alignr}${offset -10$}${upspeed wlan0}${alignr}${color5}${upspeedgraph wlan0 15,175}
+${color2}WL Down:${color} ${alignr}${offset -10$}${downspeed wlan0}${alignr}${color5}${downspeedgraph wlan0 15,175}
 ]];
