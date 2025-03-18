@@ -1,4 +1,3 @@
-# Defined in - @ line 1
 function zypper --wraps='sudo zypper'
     switch $argv[1]
         case up
