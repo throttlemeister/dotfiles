@@ -4,13 +4,12 @@ function ff -d 'fastfetch shortcut'
             fastfetch -c examples/6.jsonc $argv
         else
             if test -n "$KITTY_WINDOW_ID"
-                fastfetch -c examples/6.jsonc $argv
+                fastfetch -c /usr/share/fastfetch/presets/examples/6.jsonc $argv
             else
-                fastfetch -l ~/ansible/files/twgrey.png --logo-type iterm --logo-padding-top 2 --logo-width 45 -c examples/6.jsonc $argv
+                fastfetch -l ~/ansible/files/twgrey.png --logo-type iterm --logo-padding-top 2 --logo-width 45 -c /usr/share/fastfetch/presets/examples/6.jsonc $argv
             end
         end
     else
         command neofetch $argv
     end
 end
-
