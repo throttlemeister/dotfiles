@@ -16,13 +16,11 @@ set -g supported_versions 3.9 3.10 3.11 3.12 3.13
 ## the command `fish_key_reader`.
 ##
 if test -n "$FISH_AI_KEYMAP_1"
-    echo "🎹 Using custom keyboard shortcut '$FISH_AI_KEYMAP_1' instead of Ctrl+P."
     set -g keymap_1 "$FISH_AI_KEYMAP_1"
 else
     set -g keymap_1 \cp
 end
 if test -n "$FISH_AI_KEYMAP_2"
-    echo "🎹 Using custom keyboard shortcut '$FISH_AI_KEYMAP_2' instead of Ctrl+Space."
     set -g keymap_2 "$FISH_AI_KEYMAP_2"
 else
     if type -q sw_vers
@@ -33,7 +31,7 @@ else
         set -g keymap_2 -k nul
     end
 end
-if test $fish_key_bindings = fish_vi_key_bindings
+if test "$fish_key_bindings" = fish_vi_key_bindings
     set -g bind_command bind -M insert
 else
     set -g bind_command bind
@@ -66,6 +64,7 @@ function _fish_ai_install --on-event fish_ai_install
         return 2
     end
     python_version_check
+    notify_custom_keybindings
     symlink_truststore
     autoconfig_gh_models
     if ! test -f ~/.config/fish-ai.ini
@@ -93,6 +92,7 @@ function _fish_ai_update --on-event fish_ai_update
         return 2
     end
     python_version_check
+    notify_custom_keybindings
     symlink_truststore
     warn_plaintext_api_keys
 end
@@ -183,10 +183,10 @@ function autoconfig_gh_models --description "Deploy configuration for GitHub Mod
     if ! type -q gh
         return
     end
-    if test -z (gh auth token)
+    if test -z (gh auth token 2>/dev/null)
         return
     end
-    if test -z (gh ext ls | grep "gh models")
+    if test -z (gh ext ls | grep "gh models" 2>/dev/null)
         return
     end
     echo "[fish-ai]" >>~/.config/fish-ai.ini
@@ -210,4 +210,13 @@ function show_progess_indicator --description "Show a progress indicator."
     # Move the cursor to the end of the line and insert progress indicator
     tput hpa (math $COLUMNS - $rplen - 2)
     echo -n '⏳'
+end
+
+function notify_custom_keybindings --description "Print a message when custom keybindings are used."
+    if test -n "$FISH_AI_KEYMAP_1"
+        echo "🎹 Using custom keyboard shortcut '$FISH_AI_KEYMAP_1' instead of Ctrl+P."
+    end
+    if test -n "$FISH_AI_KEYMAP_2"
+        echo "🎹 Using custom keyboard shortcut '$FISH_AI_KEYMAP_2' instead of Ctrl+Space."
+    end
 end
