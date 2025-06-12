@@ -206,8 +206,8 @@ ${color5}${font Roboto:size=10}D R I V E S   ${font}${color}
 ${color5}${hr 2}${color}
 ${color7}/ ${color} ${alignr}${color2}Used ${color}${fs_used /} ${color2}Total ${color}${fs_size /}
 ${color5}${fs_bar 10,299 /}
-${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda3}${alignr}${color5}${diskiograph_read sda3 15,175}
-${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda3}${alignr}${color5}${diskiograph_write sda3 15,175}
+${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/nvme0n1p2}${alignr}${color5}${diskiograph_read nvme0n1p2 15,175}
+${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/nvme0n1p2}${alignr}${color5}${diskiograph_write nvme0n1p2 15,175}
 ${color5}${hr 2}${color}
 ${color5}${color5}${font Roboto:size=10}N E T W O R K   ${font}${color}
 ${color5}${hr 2}${color}
