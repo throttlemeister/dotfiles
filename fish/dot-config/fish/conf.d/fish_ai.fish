@@ -58,9 +58,9 @@ function _fish_ai_install --on-event fish_ai_install
     end
 
     echo "🍬 Installing dependencies. This may take a few seconds..."
-    ~/.fish-ai/bin/pip install -qq "$(get_installation_url)"
+    ~/.fish-ai/bin/pip -qq install "$(get_installation_url)"
     if test $status -ne 0
-        echo "💔 Installation failed. Check previous terminal output for details."
+        echo "💔 Installation from '$(get_installation_url)' failed. Check previous terminal output for details."
         return 2
     end
     python_version_check
@@ -163,6 +163,9 @@ function symlink_truststore --description "Use the bundle with CA certificates t
 end
 
 function warn_plaintext_api_keys --description "Warn about plaintext API keys."
+    if ! test -f ~/.config/fish-ai.ini
+        return
+    end
     if grep -q "^api_key" ~/.config/fish-ai.ini
         echo -n "🚨 One or more plaintext API keys are stored in "
         set_color --bold red
