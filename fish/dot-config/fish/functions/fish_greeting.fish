@@ -15,7 +15,7 @@ function fish_greeting
         # not there, we clone the repo.
         # Also, we only attempt this if there is a network connecttion!
         set __link (ip link ls | grep 'state UP')
-        if [ -z $__link ]
+        if [ -z $__link ] 2>/dev/null
             echo -e "\nNo network detected; skipping configuration checks...\n"
         else
             echo -e "\nChecking configurations...\n"
