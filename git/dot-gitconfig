@@ -1,6 +1,7 @@
 [user]
         name = throttlemeister
         email = throttlemeister@sport-touring.eu
+	github = throttlemeister
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [core]
