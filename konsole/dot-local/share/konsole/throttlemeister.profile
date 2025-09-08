@@ -1,6 +1,6 @@
 [Appearance]
-ColorScheme=catppuccin-mocha
-Font=IosevkaTerm Nerd Font,12.5,-1,5,300,0,0,0,0,0,0,0,0,0,0,1,Light
+ColorScheme=throttlemeister
+Font=D2CodingLigature Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
 Command=/usr/bin/fish
