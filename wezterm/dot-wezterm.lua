@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 config.default_prog = { "/usr/bin/fish" }
 
 -- For example, changing the color scheme:
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Catppuccin Frappe"
 
 -- Font config
 config.font = wezterm.font("IosevkaTermNF-Light")
