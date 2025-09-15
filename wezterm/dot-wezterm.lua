@@ -23,5 +23,11 @@ config.initial_rows = 35
 -- Remove tabbar
 config.enable_tab_bar = false
 
+-- key-bindings
+-- New tab
+--  config.keys = {
+--  	{ key = "t", mods = CTRL, action = act.SpawnTab("DefaultDomain") },
+--  }
+
 -- and finally, return the configuration to wezterm
 return config
