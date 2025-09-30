@@ -11,7 +11,7 @@ config.default_prog = { "/usr/bin/fish" }
 config.color_scheme = "Catppuccin Frappe"
 
 -- Font config
-config.font = wezterm.font("IosevkaTermNF-Light")
+config.font = wezterm.font("IosevkaTermNF")
 
 -- Background opacity
 config.window_background_opacity = 0.95
@@ -21,13 +21,13 @@ config.initial_cols = 135
 config.initial_rows = 35
 
 -- Remove tabbar
-config.enable_tab_bar = false
+-- config.enable_tab_bar = false
 
--- key-bindings
--- New tab
---  config.keys = {
---  	{ key = "t", mods = CTRL, action = act.SpawnTab("DefaultDomain") },
---  }
+-- config.keys = {
+-- 	key = "t",
+-- 	mods = "CTRL",
+-- 	action = wezterm.action.SpawnTab("DefaultDomain"),
+-- }
 
 -- and finally, return the configuration to wezterm
 return config
