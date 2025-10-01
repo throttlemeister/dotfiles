@@ -4,6 +4,7 @@ return {
   --- @module 'render-markdown'
   --- @type render.md.UserConfig
   opts = {
+    ensure_installed = { "markdownlint-cli2" },
     code = {
       sign = true,
       width = "block",
@@ -160,4 +161,14 @@ return {
       end,
     }):map("<leader>um")
   end,
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters = {
+        ["markdownlint-cli2"] = {
+          args = { "--config", vim.fn.expand("$HOME/.markdownlint-cli2.yaml"), "--" },
+        },
+      },
+    },
+  },
 }
