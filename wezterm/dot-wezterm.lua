@@ -21,7 +21,7 @@ config.initial_cols = 135
 config.initial_rows = 35
 
 -- Remove tabbar
--- config.enable_tab_bar = false
+config.enable_tab_bar = false
 
 -- config.keys = {
 -- 	key = "t",
