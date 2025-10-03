@@ -1,3 +1,3 @@
 function note -d "Simple note taking with nvim"
-    nvim ~/notes/index.md
+    nvim ~/notes/README.md
 end
