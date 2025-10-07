@@ -38,6 +38,19 @@ function fish_greeting
                 git clone https://github.com/throttlemeister/ansible.git
                 cd $_oldpath
             end
+            # And for our notes directory
+            if test -d $HOME/notes
+                set _oldpath $PWD
+                cd $HOME/notes
+                git pull 1>/dev/null
+                cd
+                cd $_oldpath
+            else
+                set _oldpath $PWD
+                cd $HOME
+                github notes
+                cd $_oldpath
+            end
         end
         # GitHub way of authenticating changed, so we do not use this anymore.
         # Housekeeping.
