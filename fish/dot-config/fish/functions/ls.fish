@@ -7,7 +7,7 @@ function ls -d 'eza instead of ls'
 end
 
 function ll
-    if command -sq eza
+    if type --quiet eza
         ls -laa -g $argv
     else
         command ls -la $argv
@@ -19,7 +19,7 @@ function l
 end
 
 function lt
-    if command -sq eza
+    if type --quiet eza
         ls -laa -snew -g $argv
     else
         command ls -ltr $argv
@@ -27,7 +27,7 @@ function lt
 end
 
 function lls
-    if command -sq eza
+    if type --quiet eza
         ls -laa -g --sort=size $argv
     else
         command ls -lahS

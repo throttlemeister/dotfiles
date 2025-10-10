@@ -4,7 +4,7 @@ function df -d "Using duf instead of df when we can"
     if set -ql _flag_h
         set __param --only local
     end
-    if command -sq duf
+    if type --quiet duf
         duf $__param
     else
         df $argv
