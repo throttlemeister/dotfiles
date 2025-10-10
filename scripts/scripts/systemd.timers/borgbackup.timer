@@ -2,8 +2,9 @@
 Description="Run borgbackup.sh every hour"
 
 [Timer]
-OnBootSec=5min
-OnUnitActiveSec=1h
+# OnBootSec=5min
+OnCalendar=*:10
+Persistent=true
 Unit=borgbackup.service
 
 [Install]
