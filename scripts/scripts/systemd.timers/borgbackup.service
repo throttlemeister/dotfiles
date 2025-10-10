@@ -1,0 +1,5 @@
+[Unit]
+Description="Borg Backup Script"
+
+[Service]
+ExecStart=/home/backup/borg_backup.sh

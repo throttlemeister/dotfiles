@@ -1,0 +1,10 @@
+[Unit]
+Description="Run borgbackup.sh every hour"
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1h
+Unit=borgbackup.service
+
+[Install]
+WantedBy=multi-user.target
