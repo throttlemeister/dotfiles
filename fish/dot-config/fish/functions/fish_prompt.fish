@@ -1,9 +1,9 @@
 # This theme is based on Bira theme from oh-my-fish (https://github.com/oh-my-fish/theme-bira)
 #
 # This is a two line prompt theme. It shows user@host, path and git status on the left, and a command
-# duraction on the right side.
+# duration on the right side.
 #
-# Createed by throttlemeister (https://www.github.com/theottlemeister)
+# Createed by throttlemeister (https://www.github.com/throttlemeister)
 
 function __user_host
     set fqdn (hostnamectl hostname)
