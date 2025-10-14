@@ -20,7 +20,7 @@ save_to_clipboard = true
 program = "/usr/bin/fish"
 
 [window]
-opacity = 0.75
+opacity = 0.70
 blur = true
 padding.x = 5
 padding.y =5
