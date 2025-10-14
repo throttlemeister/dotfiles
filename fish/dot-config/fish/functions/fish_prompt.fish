@@ -19,17 +19,17 @@ function __user_host
     set fqdn (hostnamectl hostname)
     set -l content
     if [ (id -u) = 0 ]
-        echo -n (set_color normal)\((set_color --bold red)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\) (set color normal)
+        echo -n (set_color normal)\((set_color --bold red)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
     else
-        echo -n (set_color normal)\((set_color 81c8be)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\) (set color normal)
+        echo -n (set_color normal)\((set_color 81c8be)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
     end
 end
 
 function __current_path
     if [ (id -u) = 0 ]
-        echo -n (set_color normal)-[(set_color e5c890)(prompt_pwd)(set_color normal)](set_color normal)
+        echo -n (set_color normal)-[(set_color e5c890)(prompt_pwd)(set_color normal)]
     else
-        echo -n (set_color normal)-[(set_color e5c890)(prompt_pwd)(set_color normal)](set_color normal)
+        echo -n (set_color normal)-[(set_color e5c890)(prompt_pwd)(set_color normal)]
     end
 end
 
@@ -53,11 +53,7 @@ function fish_prompt
     set -g __fish_git_prompt_color_prefix yellow
     set -g __fish_git_prompt_color_suffix yellow
     set -g __fish_git_prompt_color yellow
-    if [ (id -u) = 0 ]
-        echo -n "╭─"
-    else
-        echo -n "╭─"
-    end
+    echo -n "╭─"
     __in_cont
     __user_host
     __current_path
