@@ -3,3 +3,4 @@ set -gx ANSIBLE_CONFIG $HOME/ansible/ansible.cfg
 zoxide init fish | source
 atuin init fish | source
 bind up _atuin_bind_up
+fzf_configure_bindings --directory=\cf --git_log=\cg
