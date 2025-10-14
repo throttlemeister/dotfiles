@@ -29,7 +29,7 @@ function __current_path
     if [ (id -u) = 0 ]
         echo -n (set_color normal)-[(set_color e5c890)(prompt_pwd)(set_color normal)]
     else
-        echo -n (set_color normal)-[(set_color e5c890)(prompt_pwd)(set_color normal)]
+        echo -n (set_color normal) (set_color -b eebebe)(set_color --bold black)(prompt_pwd)(set_color -b normal)(set_color eebebe)(set_color normal)
     end
 end
 
@@ -50,9 +50,10 @@ function fish_prompt
     set -g __fish_git_prompt_showupstream informative
     set -g __fish_git_prompt_showcolorhints 1
     set -g __fish_git_prompt_showstashstate 1
-    set -g __fish_git_prompt_color_prefix yellow
-    set -g __fish_git_prompt_color_suffix yellow
+    set -g __fish_git_prompt_color_prefix normal
+    set -g __fish_git_prompt_color_suffix normal
     set -g __fish_git_prompt_color yellow
+    set -g __fish_git_prompt_char_stateseparator 
     echo -n "╭─"
     __in_cont
     __user_host
