@@ -13,6 +13,11 @@ function repos -d "This function will synchornize all git repositories"
     cd ~/ansible/
     pull
     echo "==========================================="
+    echo "============Pull notes repo..============"
+    echo "==========================================="
+    cd ~/notes/
+    pull
+    echo "==========================================="
     echo "===========Pull wallpaper repo..==========="
     echo "==========================================="
     cd ~/Pictures/wallpaper/
