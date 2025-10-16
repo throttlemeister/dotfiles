@@ -18,11 +18,12 @@ function fish_greeting
         if [ -z $__link ] 2>/dev/null
             echo -e "\nNo network detected; skipping configuration checks...\n"
         else
-            echo -e "\nChecking configurations...\n"
+            echo -ne "\nChecking configurations...\r"
             if test -d $HOME/.dotfiles/.git
                 set _oldpath $PWD
                 cd $HOME/.dotfiles
-                git pull 1>/dev/null
+                git pull >/dev/null 2>&1
+                echo -ne "Syncing dotfiles........... \r"
                 cd $_oldpath
             end
             #            # We do that for the Ansible directory too
@@ -43,7 +44,8 @@ function fish_greeting
             if test -d $HOME/notes
                 set _oldpath $PWD
                 cd $HOME/notes
-                git pull 1>/dev/null
+                git pull >/dev/null 2>&1
+                echo -ne "Syncing notes............... \r"
                 cd
                 cd $_oldpath
             else
@@ -53,6 +55,8 @@ function fish_greeting
                 github notes
                 cd $_oldpath
             end
+            echo -ne "Done........................ \n"
+            echo -ne "\n"
         end
         # GitHub way of authenticating changed, so we do not use this anymore.
         # Housekeeping.

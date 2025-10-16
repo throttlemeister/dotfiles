@@ -2,35 +2,23 @@
 #
 function repos -d "This function will synchornize all git repositories"
     set _oldpath $PWD
-    echo "==========================================="
-    echo "===========Pull dotfiles repo..============"
-    echo "==========================================="
+    echo -ne "Pulling dotfiles........ \r"
     cd ~/.dotfiles/
-    pull
-    echo "==========================================="
-    echo "============Pull ansible repo..============"
-    echo "==========================================="
+    pull >/dev/null 2>&1
+    echo -ne "Pulling ansible......... \r"
     cd ~/ansible/
-    pull
-    echo "==========================================="
-    echo "============Pull notes repo..============"
-    echo "==========================================="
+    pull >/dev/null 2>&1
+    echo -ne "Pulling notes........... \r"
     cd ~/notes/
-    pull
-    echo "==========================================="
-    echo "===========Pull wallpaper repo..==========="
-    echo "==========================================="
-    cd ~/Pictures/wallpaper/
-    pull
-    echo "==========================================="
-    echo "=========Pull crashdot.com repo..=========="
-    echo "==========================================="
+    pull >/dev/null 2>&1
+    echo -ne "Pulling wallpaper....... \r"
+    cd ~/Pictures/wallpapers/
+    pull >/dev/null 2>&1
+    echo -ne "Pulling crashdot.com.... \r"
     cd ~/web/crashdot.com/
-    pull
-    echo "==========================================="
-    echo "=======Pull sport-touring.eu repo..========"
-    echo "==========================================="
+    pull >/dev/null 2>&1
+    echo -ne "Pulling sport-touring.eu \r"
     cd ~/web/sport-touring.eu/
-    pull
+    pull >/dev/null 2>&1
     cd $_oldpath
 end
