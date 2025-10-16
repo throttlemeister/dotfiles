@@ -4,3 +4,4 @@ zoxide init fish | source
 atuin init fish | source
 bind up _atuin_bind_up
 fzf_configure_bindings --directory=\cf --git_log=\cg
+bind ctrl-backspace backward-kill-word
