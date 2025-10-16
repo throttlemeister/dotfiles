@@ -1,6 +1,7 @@
 # Function to download and synchornize all git repositories
 #
 function repos -d "This function will synchornize all git repositories"
+    echo -ne "Synchronizing repositories \n"
     set _oldpath $PWD
     echo -ne "Pullinging dotfiles            [███...............] \r"
     cd ~/.dotfiles/
