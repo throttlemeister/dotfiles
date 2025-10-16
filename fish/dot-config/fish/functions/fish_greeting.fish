@@ -18,11 +18,12 @@ function fish_greeting
         if [ -z $__link ] 2>/dev/null
             echo -e "\nNo network detected; skipping configuration checks...\n"
         else
-            echo -ne "\nChecking configurations      [..................] \r"
+            echo -ne "\nChecking configurations   0/3[..................] \r"
+            sleep 0.5
             if test -d $HOME/.dotfiles/.git
                 set _oldpath $PWD
                 cd $HOME/.dotfiles
-                echo -ne "Syncing dotfiles               [██████............] \r"
+                echo -ne "Syncing dotfiles            1/3[██████............] \r"
                 git pull >/dev/null 2>&1
                 cd $_oldpath
             end
@@ -44,7 +45,7 @@ function fish_greeting
             if test -d $HOME/notes
                 set _oldpath $PWD
                 cd $HOME/notes
-                echo -ne "Syncing notes                  [████████████......] \r"
+                echo -ne "Syncing notes               2/3[████████████......] \r"
                 git pull >/dev/null 2>&1
                 cd
                 cd $_oldpath
@@ -55,7 +56,7 @@ function fish_greeting
                 github notes
                 cd $_oldpath
             end
-            echo -ne "Done                           [██████████████████] \n"
+            echo -ne "Done                        3/3[██████████████████] \n"
             echo -ne "\n"
         end
         # GitHub way of authenticating changed, so we do not use this anymore.
