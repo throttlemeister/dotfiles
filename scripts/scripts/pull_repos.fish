@@ -6,7 +6,7 @@ function pull_repos -d "Syncrhonize repositories with a dynamic progress bar"
     set _seq 1
     for i in (seq 1 $_total)
         print_progress $_total $_seq
-        cd $repodir[$_seq]
+        /usr/bin/cd $repodir[$_seq]
         git pull >/dev/null 2>&1
         echo -ne "\r"
         set _seq (math $_seq + 1)
