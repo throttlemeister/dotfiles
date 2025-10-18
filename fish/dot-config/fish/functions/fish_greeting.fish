@@ -18,7 +18,7 @@ function fish_greeting
         if [ -z $__link ] 2>/dev/null
             echo -e "\nNo network detected; skipping configuration checks...\n"
         else
-            if test -z (find ~/.gitcheck -mmin -60)
+            if test -z (find ~/.gitcheck -mmin -240)
                 echo -ne "\nSynchronizing configuration \n"
                 sleep 0.5
                 if test -d $HOME/.dotfiles/.git
