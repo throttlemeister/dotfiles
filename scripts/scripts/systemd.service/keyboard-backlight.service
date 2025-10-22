@@ -1,5 +1,5 @@
 [Unit]
-Description=Turns on keyboard backlight at boot
+Description="Turns on keyboard backlight at boot for Lenovo Thinkpad T480"
 
 [Service]
 ExecStart=/usr/bin/brightnessctl --device 'tpacpi::kbd_backlight' set 1
