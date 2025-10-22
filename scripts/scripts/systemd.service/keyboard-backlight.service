@@ -1,0 +1,8 @@
+[Unit]
+Description=Turns on keyboard backlight at boot
+
+[Service]
+ExecStart=/usr/bin/brightnessctl --device 'tpacpi::kbd_backlight' set 1
+
+[Install]
+WantedBy=multi-user.target graphical.target
