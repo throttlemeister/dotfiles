@@ -7,6 +7,6 @@ function df -d "Using duf instead of df when we can"
     if type --quiet duf
         duf $__param
     else
-        df $argv
+        command df $argv
     end
 end
