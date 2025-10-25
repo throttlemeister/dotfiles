@@ -1,9 +1,3 @@
-# Sigh. I guess it is not possible to set and keep set nvim as default
-#
-function vi --wraps="neovim to vi"
-    if type --quiet nvim
-        nvim $argv
-    else
-        command vi $argv
-    end
+function vi --wraps=nvim --wraps=vim --wraps=vi -d 'Use neovim or vim when possible'
+    __fish_dynamic_alias vi nvim vim vi % $argv
 end

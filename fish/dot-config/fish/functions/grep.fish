@@ -1,14 +1,3 @@
-# Defined in - @ line 1
-#
-# Let's check if we have ripgrep installed and if so
-# we use it, otherwise use standard grep with options
-function grep
-    if type --quiet rg
-        rg $argv
-
-    else
-        command grep -n --color $argv
-
-    end
+function grep --wraps=rg --wraps=grep -d 'Use ripgrep instead of grep if possible'
+    __fish_dynamic_alias grep rg grep % -n --color=auto $argv
 end
-
