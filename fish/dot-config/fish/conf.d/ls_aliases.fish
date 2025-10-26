@@ -1,35 +1,19 @@
 function ls -d 'eza instead of ls'
-    if type --quiet eza && test "$argv[1]" != -ltr
-        eza --header --group-directories-first --git --icons=auto $argv
-    else
-        command ls --color=always $argv
-    end
+    __fish_dynamic_alias ls "eza -g --header --group-directories-first --git --icons=auto" "exa -g --header --group-directories-first --git --icons=auto" ls % $argv
 end
 
 function ll
-    if type --quiet eza
-        ls -laa -g $argv
-    else
-        command ls -la $argv
-    end
+    __fish_dynamic_alias ls "eza -g --header --group-directories-first --git --icons=auto" "exa -g --header --group-directories-first --git --icons=auto" ls % -la $argv
 end
 
 function l
-    ls $argv
+    __fish_dynamic_alias ls "eza --header --group-directories-first --git --icons=auto" "exa --header --group-directories-first --git --icons=auto" ls % $argv
 end
 
 function lt
-    if type --quiet eza
-        ls -laa -snew -g $argv
-    else
-        command ls -ltr $argv
-    end
+    __fish_dynamic_alias ls "eza -laa -snew -g --header --group-directories-first --git --icons=auto" "exa -laa -snew -g --header --group-directories-first --git --icons=auto" "ls -ltr" % $argv
 end
 
 function lls
-    if type --quiet eza
-        ls -laa -g --sort=size $argv
-    else
-        command ls -lahS
-    end
+    __fish_dynamic_alias ls "eza -g --sort=size --header --group-directories-first --git --icons=auto" "exa -g --sort=size --header --group-directories-first --git --icons=auto" "ls -hS" % -la $argv
 end
