@@ -2,6 +2,12 @@
 set -g _eflags "-g --header --group-directories-first --git --icons=auto"
 
 function ls -d 'Using eza/exa instead of ls when installed'
+    argparse ltr=? -- $argv
+    or return
+    if set --query _flag_ltr
+        lt
+        return 0
+    end
     __fish_dynamic_alias ls "eza $_eflags" "exa $_eflags" ls % $argv
 end
 
