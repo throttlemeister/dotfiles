@@ -8,91 +8,91 @@ Color=48,52,70
 Color=48,52,70
 
 [Color0]
-Color=63,63,63
+Color=115,121,148
 
 [Color0Faint]
-Color=52,52,52
+Color=115,121,148
 
 [Color0Intense]
-Color=112,144,128
+Color=115,121,148
 
 [Color1]
-Color=112,80,80
+Color=231,130,132
 
 [Color1Faint]
-Color=102,72,72
+Color=231,130,132
 
 [Color1Intense]
-Color=220,163,163
+Color=231,130,132
 
 [Color2]
-Color=96,180,138
+Color=166,209,137
 
 [Color2Faint]
-Color=87,163,124
+Color=166,209,137
 
 [Color2Intense]
-Color=114,213,163
+Color=166,209,137
 
 [Color3]
-Color=223,175,143
+Color=229,200,144
 
 [Color3Faint]
-Color=170,133,111
+Color=229,200,144
 
 [Color3Intense]
-Color=240,223,175
+Color=229,200,144
 
 [Color4]
-Color=154,184,215
+Color=140,170,238
 
 [Color4Faint]
-Color=117,141,161
+Color=140,170,238
 
 [Color4Intense]
-Color=148,191,243
+Color=140,170,238
 
 [Color5]
-Color=220,140,195
+Color=202,158,230
 
 [Color5Faint]
-Color=154,98,137
+Color=202,158,230
 
 [Color5Intense]
-Color=236,147,211
+Color=202,158,230
 
 [Color6]
-Color=140,208,211
+Color=153,209,219
 
 [Color6Faint]
-Color=107,159,161
+Color=153,209,219
 
 [Color6Intense]
-Color=147,224,227
+Color=153,209,219
 
 [Color7]
-Color=220,220,204
+Color=198,208,245
 
 [Color7Faint]
-Color=149,149,139
+Color=198,208,245
 
 [Color7Intense]
-Color=255,255,255
+Color=198,208,245
 
 [Foreground]
-Color=220,220,204
+Color=198,208,245
 
 [ForegroundFaint]
-Color=220,220,204
+Color=198,208,245
 
 [ForegroundIntense]
-Color=220,220,204
+Color=198,208,245
 
 [General]
 Anchor=0.5,0.5
 Blur=true
 ColorRandomization=false
-Description=throttlemeister
+Description=Catppuccin Frappe
 FillStyle=Tile
 Opacity=0.54
 Wallpaper=
