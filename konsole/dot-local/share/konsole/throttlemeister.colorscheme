@@ -1,11 +1,11 @@
 [Background]
-Color=0,0,0
+Color=48,52,70
 
 [BackgroundFaint]
-Color=0,0,0
+Color=48,52,70
 
 [BackgroundIntense]
-Color=0,0,0
+Color=48,52,70
 
 [Color0]
 Color=63,63,63
@@ -94,7 +94,7 @@ Blur=true
 ColorRandomization=false
 Description=throttlemeister
 FillStyle=Tile
-Opacity=0.65
+Opacity=0.54
 Wallpaper=
 WallpaperFlipType=NoFlip
 WallpaperOpacity=1
