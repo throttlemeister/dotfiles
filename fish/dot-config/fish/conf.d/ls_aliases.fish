@@ -6,7 +6,7 @@ function ls -d 'Using eza/exa instead of ls when installed'
 end
 
 function ll
-    __fish_dynamic_alias ll "eza $_eflags" "exa $_eflags" ls % -la $argv
+    __fish_dynamic_alias ll "eza $_eflags -a" "exa $_eflags -a" ls % -la $argv
 end
 
 function l
@@ -18,5 +18,5 @@ function lt
 end
 
 function lls
-    __fish_dynamic_alias lls "eza --sort=size $_eflags" "exa --sort=size $_eflags" "ls -hS" % -la $argv
+    __fish_dynamic_alias lls "eza --sort=size $_eflags -a" "exa --sort=size $_eflags -a" "ls -hS" % -la $argv
 end
