@@ -20,6 +20,7 @@ function __user_host
     set -l content
     if [ (id -u) = 0 ]
         echo -n (set_color normal)\((set_color --bold red)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
+        kitty @ set-colors background=#82181A
     else
         echo -n (set_color normal)\((set_color 81c8be)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
     end
