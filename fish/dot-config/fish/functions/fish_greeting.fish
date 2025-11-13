@@ -6,8 +6,7 @@ function fish_greeting
         echo ""
         if test $USER = root
             kitty @ set-colors background=#82181A
-            #inxi -Sc 12 && inxi -c 12
-            figlet "root shell"
+            inxi -Sc 12 && inxi -c 12
         else
             kitty @ set-colors background=#303446
             inxi -S && inxi
