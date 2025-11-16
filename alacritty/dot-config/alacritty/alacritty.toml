@@ -32,6 +32,7 @@ lines = 35
 
 [general]
 live_config_reload = true
+ipc_socket = true
 
 import = [
   # uncomment the flavour you want below:
