@@ -15,13 +15,22 @@
 # PATH: e5c890
 # git: 
 
+function __check_term
+    if set -q KITTY_WINDOW_ID
+        if [ (id -u) = 0 ]
+            kitty @ set-colors background=#82181A
+        else
+            kitty @ set-colors background=#303446
+        end
+    end
+end
+
 function __user_host
     set fqdn (hostnamectl hostname)
     set -l content
     if [ (id -u) = 0 ]
         echo -n (set_color normal)\((set_color --bold red)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
     else
-        kitty @ set-colors background=#303446
         echo -n (set_color normal)\((set_color 81c8be)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
     end
 end
@@ -44,6 +53,7 @@ function __in_cont
 end
 
 function fish_prompt
+    __check_term
     # Set some variables for git status
     set -g __fish_git_prompt_show_informative_status 1
     set -g __fish_git_prompt_showdirtystate 1
