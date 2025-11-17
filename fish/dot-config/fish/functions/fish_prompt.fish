@@ -15,27 +15,6 @@
 # PATH: e5c890
 # git: 
 
-#function __check_term
-#    if set -q KITTY_WINDOW_ID
-#        if [ (id -u) = 0 ]
-#            kitty @ set-colors background=#82181A
-#            return 0
-#        else
-#            kitty @ set-colors background=#303446
-#            return 0
-#        end
-#    end
-#    if set -q ALACRITTY_WINDOW_ID
-#        if [ (id -u) = 0 ]
-#            alacritty msg config "colors.primary.background='#82181A'"
-#            return 0
-#        else
-#            alacritty msg config "colors.primary.background='#303446'"
-#            return 0
-#        end
-#    end
-#end
-
 function __check_term
     if [ (id -u) = 0 ]
         printf '\x1b]11;#82181A\x1b\\'
