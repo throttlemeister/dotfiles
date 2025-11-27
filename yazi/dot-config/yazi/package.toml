@@ -3,5 +3,15 @@ use = "yazi-rs/plugins:git"
 rev = "eaf6920"
 hash = "27ca02f49fd236b5cc7bf03c243859fe"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "eaf6920"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "eaf6920"
+hash = "8a7c58225816a163a6e8730c0adafbc8"
+
 [flavor]
 deps = []
