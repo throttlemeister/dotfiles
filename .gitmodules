@@ -1,0 +1,3 @@
+[submodule "yazi/dot-config/yazi/plugins"]
+	path = yazi/dot-config/yazi/plugins
+	url = git@github.com:yazi-rs/plugins.git
