@@ -4,7 +4,7 @@ function fish_greeting
         echo -e " Welcome to:"
         figlet (hostname -s)
         echo ""
-        if test $USER = root
+        if fish_is_root_user
             inxi -Sc 12 && inxi -c 12
         else
             inxi -S && inxi

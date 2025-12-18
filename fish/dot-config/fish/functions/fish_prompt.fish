@@ -16,7 +16,7 @@
 # git: 
 
 function __check_term
-    if [ (id -u) = 0 ]
+    if fish_is_root_user
         printf '\x1b]11;#82181A\x1b\\'
     else
         printf '\x1b]11;#303446\x1b\\'
@@ -26,7 +26,7 @@ end
 function __user_host
     set fqdn (hostnamectl hostname)
     set -l content
-    if [ (id -u) = 0 ]
+    if fish_is_root_user
         echo -n (set_color normal)\((set_color --bold red)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
     else
         echo -n (set_color normal)\((set_color 81c8be)$USER(set_color normal)@(set_color 8caaee)$fqdn(set_color normal)\)
@@ -34,7 +34,7 @@ function __user_host
 end
 
 function __current_path
-    if [ (id -u) = 0 ]
+    if fish_is_root_user
         echo -n (set_color normal)-[(set_color e5c890)(prompt_pwd)(set_color normal)]
     else
         echo -n (set_color normal) (set_color -b eebebe)(set_color --bold black)(prompt_pwd)(set_color -b normal)(set_color eebebe)(set_color normal)
@@ -69,7 +69,7 @@ function fish_prompt
     __current_path
     fish_git_prompt
     echo -e ''
-    if [ (id -u) = 0 ]
+    if fish_is_root_user
         echo "╰─"(set_color --bold red)"❯ "(set_color normal)
     else
         echo "╰─"(set_color --bold green)"❯ "(set_color normal)
