@@ -1,0 +1,5 @@
+[Unit]
+Description="Check and update notes when needed"
+
+[Service]
+ExecStart=/home/throttlemeister/scripts/git-notes.sh
