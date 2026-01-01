@@ -1,3 +1,3 @@
 function mc -d "Using yazi instead of Midnight Commander"
-    __fish_dynamic_alias mc yazi mc % $argv
+    __fish_dynamic_alias mc mc yazi % $argv
 end
