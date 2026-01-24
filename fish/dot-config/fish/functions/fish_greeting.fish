@@ -2,8 +2,8 @@ function fish_greeting
     # Giving us a nice welcome message
     if [ -z $container ]
         if fish_is_root_user
-            #inxi -Sc 12 && inxi -c 12
-            echo -e " ### WARNING: You are now logged in as root"
+            echo ""
+            echo -e " ### WARNING: You are now logged in as root @" (hostname -f)
             echo ""
         else
             echo -e " Welcome to:"
