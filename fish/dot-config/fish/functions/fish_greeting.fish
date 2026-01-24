@@ -5,7 +5,8 @@ function fish_greeting
         figlet (hostname -s)
         echo ""
         if fish_is_root_user
-            inxi -Sc 12 && inxi -c 12
+            #inxi -Sc 12 && inxi -c 12
+            echo -n "WARNING: You are now logged in as root"
         else
             inxi -S && inxi
         end
