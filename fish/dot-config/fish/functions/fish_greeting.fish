@@ -6,7 +6,7 @@ function fish_greeting
         echo ""
         if fish_is_root_user
             #inxi -Sc 12 && inxi -c 12
-            echo -n "WARNING: You are now logged in as root"
+            echo -e "WARNING: You are now logged in as root"
         else
             inxi -S && inxi
         end
