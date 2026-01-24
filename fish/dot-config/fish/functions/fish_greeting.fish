@@ -3,7 +3,8 @@ function fish_greeting
     if [ -z $container ]
         if fish_is_root_user
             #inxi -Sc 12 && inxi -c 12
-            echo -e "WARNING: You are now logged in as root"
+            echo -e " ### WARNING: You are now logged in as root"
+            echo ""
         else
             echo -e " Welcome to:"
             figlet (hostname -s)
