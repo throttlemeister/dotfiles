@@ -3,7 +3,11 @@ function fish_greeting
     if [ -z $container ]
         if fish_is_root_user
             echo ""
-            echo -e " ### WARNING: You are now logging in as root @" (hostname -f)
+            echo -e "_  _  _ _______  ______ __   _ _____ __   _  ______"
+            echo -e "|  |  | |_____| |_____/ | \  |   |   | \  | |  ____"
+            echo -e "|__|__| |     | |    \_ |  \_| __|__ |  \_| |_____|"
+            echo ""
+            echo -e " ### You are now logging in as root @" (hostname -f)
             echo ""
         else
             echo -e " Welcome to:"
