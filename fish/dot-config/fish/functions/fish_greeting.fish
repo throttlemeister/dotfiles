@@ -8,12 +8,18 @@ function fish_greeting
             echo -e " ### You are now logged in as root @" (hostname -f)
             echo ""
         else
-            echo -e " Welcome to:"
-            figlet (hostname -s)
-            echo ""
-            inxi -S && inxi
-            echo ""
-            fortune
+            if type -q figlet
+                echo -e " Welcome to:"
+                figlet (hostname -s)
+                echo ""
+            end
+            if type -q inxi
+                inxi -S && inxi
+            end
+            if type -q fortune
+                echo ""
+                fortune
+            end
         end
         #cd
 
