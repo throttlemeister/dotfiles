@@ -16,7 +16,7 @@ function repos -d "This function will synchornize all git repositories"
     cd ~/Pictures/wallpapers/
     pull >/dev/null 2>&1
     echo -ne "Pulling crashdot.com        5/6[██████████████████████████████████.......] \r"
-    cd ~/web/crashdot.com/
+    cd ~/web/gvdtech.net/
     pull >/dev/null 2>&1
     echo -ne "Pulling sport-touring.eu    6/6[█████████████████████████████████████████] \r"
     cd ~/web/sport-touring.eu/
