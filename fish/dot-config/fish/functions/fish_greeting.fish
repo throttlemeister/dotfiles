@@ -55,16 +55,16 @@ function fish_greeting
                 #                cd $_oldpath
                 #            end
                 # And for our notes directory
-                if test -d $HOME/notes
+                if test -d $HOME/Documents/notes
                     set _oldpath $PWD
-                    cd $HOME/notes
+                    cd $HOME/Documents/notes
                     echo -ne "Syncing notes               2/2[████████████████████████████.............] \r"
                     git pull >/dev/null 2>&1
                     cd
                     cd $_oldpath
                 else
                     set _oldpath $PWD
-                    cd $HOME
+                    cd $HOME/Documents/
                     echo "Notes not found. Cloning from GitHub"
                     github notes
                     cd $_oldpath

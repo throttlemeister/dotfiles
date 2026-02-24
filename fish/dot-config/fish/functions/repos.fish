@@ -10,7 +10,7 @@ function repos -d "This function will synchornize all git repositories"
     cd ~/ansible/
     pull >/dev/null 2>&1
     echo -ne "Pulling notes               3/6[████████████████████.....................] \r"
-    cd ~/notes/
+    cd ~/Documents/notes/
     pull >/dev/null 2>&1
     echo -ne "Pulling wallpaper           4/6[███████████████████████████..............] \r"
     cd ~/Pictures/wallpapers/
