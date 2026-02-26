@@ -18,7 +18,7 @@ function fish_greeting
             end
             if type -q fortune
                 echo ""
-                fortune
+                fortune -s
             end
         end
         #cd
