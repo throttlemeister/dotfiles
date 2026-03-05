@@ -40,21 +40,6 @@ function fish_greeting
                     git pull >/dev/null 2>&1
                     cd $_oldpath
                 end
-                #            # We do that for the Ansible directory too
-                #            if test -d $HOME/ansible/.git
-                #                set _oldpath $PWD
-                #                cd $HOME/ansible
-                #                echo "Updating ansible"
-                #                git pull 1>/dev/null
-                #                cd
-                #                cd $_oldpath
-                #            else
-                #                set _oldpath $PWD
-                #                cd $HOME
-                #                git clone https://github.com/throttlemeister/ansible.git
-                #                cd $_oldpath
-                #            end
-                # And for our notes directory
                 if test -d $HOME/Documents/notes
                     set _oldpath $PWD
                     cd $HOME/Documents/notes
