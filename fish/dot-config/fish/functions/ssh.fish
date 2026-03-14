@@ -1,4 +1,4 @@
-function ssh -d "ssh using kitten when in kitty terminal"
+function ssh -d "ssh use kitten when in kitty terminal"
     if test $argv = "thor.gvdtech.net" || test $argv = thor
         if test -n "$KITTY_WINDOW_ID"
             kitten ssh $argv -t fish
