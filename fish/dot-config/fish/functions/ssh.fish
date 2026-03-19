@@ -6,7 +6,7 @@ function ssh -d "ssh use kitten when in kitty terminal"
             command ssh $argv -t fish
         end
     else
-        if test - "$KITTY_WINDOW_ID"
+        if test -n "$KITTY_WINDOW_ID"
             kitten ssh $argv
         else
             command ssh $argv
