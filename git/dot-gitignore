@@ -2,3 +2,4 @@
 .directory
 *.log
 .uuid
+lazy-lock.json
