@@ -7,7 +7,7 @@ font-size = 12
 
 # Window
 window-decoration = server
-window-save-state = never
+window-save-state = always
 background-blur-radius = 23
 window-height = 35
 window-width = 135
@@ -21,7 +21,8 @@ working-directory = inherit
 gtk-wide-tabs = false
 
 # Cursor
-cursor-style = block_hollow
+shell-integration-features = no-cursor
+cursor-style = underline
 
 # Colors
 # theme = Catppuccin Frappe
