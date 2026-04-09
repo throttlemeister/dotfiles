@@ -1,2 +1,0 @@
-#!/bin/bash
-op item get sudo --fields label=password --reveal
