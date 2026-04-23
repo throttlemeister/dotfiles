@@ -1,5 +1,5 @@
 # Set global variable for common eza/exa flags
-set -g _eflags "-g --header --group-directories-first --git --icons=auto"
+set -g _eflags "-g --header --group-directories-first --git --icons=auto --hyperlink"
 
 function ls -d 'Using eza/exa instead of ls when installed'
     __fish_dynamic_alias ls "eza $_eflags" "exa $_eflags" ls % $argv
