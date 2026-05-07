@@ -1,0 +1,11 @@
+/.cache/$
+/cache/$
+/.cache$
+/cache$
+/Cache/$
+/Cache$
+/games/$
+/games/$
+/akonadi/$
+/akonadi$
+/Steam/$
