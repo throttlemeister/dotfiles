@@ -1,0 +1,2 @@
+{"timestamp":10631716,"category":"browser.usage","name":"interaction","extra":{"source":"keyboard","glean_timestamp":"1732273236493","widget_id":"key-find","flow_id":"{865021c6-5ad4-450a-8c03-85e8ae93dd12}"},"execution_counter":22}
+{"timestamp":10684683,"category":"browser.usage","name":"interaction","extra":{"glean_timestamp":"1732273289460","flow_id":"{865021c6-5ad4-450a-8c03-85e8ae93dd12}","widget_id":"cmd-closeWindow","source":"tabs-bar"},"execution_counter":22}
