@@ -11,3 +11,4 @@
 {"timestamp":179254204,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1778415058229"}}
 {"timestamp":179258076,"category":"normandy","name":"expose_nimbus_experiment","extra":{"branchSlug":"rollout","glean_timestamp":"1778415062101","featureId":"newtabTrainhopAddon","value":"new-tab-151320260419192959-to-release-150"}}
 {"timestamp":179258076,"category":"nimbus_events","name":"exposure","extra":{"branch":"rollout","glean_timestamp":"1778415062101","feature_id":"newtabTrainhopAddon","experiment":"new-tab-151320260419192959-to-release-150"}}
+{"timestamp":179466297,"category":"doh","name":"state_shutdown","extra":{"glean_timestamp":"1778415270323","value":"null"}}
