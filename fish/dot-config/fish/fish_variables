@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR ANSIBLE_CONFIG:/etc/ansible/ansible\x2ecfg
-SETUVAR EDITOR:vi
+SETUVAR --export EDITOR:nvim
 SETUVAR GREP_COLORS:auto
 SETUVAR --export HOMEBREW_NO_ENV_HINTS:1
 SETUVAR __fish_initialized:4300
