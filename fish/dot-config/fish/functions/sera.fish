@@ -4,7 +4,7 @@ function sera -d 'Installs or wraps sera script'
     else
         set uhome $HOME
         echo "sera not present... setting up"
-        sudo stow -d $uhome/.dotfiles -t /usr/local/bin sera
+        sudo stow -d $uhome/.dotfiles/local -t /usr/local/bin sera
         if type -q bsdtar
             echo "bsdtar already present"
         else
