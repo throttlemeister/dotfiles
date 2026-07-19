@@ -4,6 +4,7 @@ function dotf -d "Use stow with extra parameters"
     if type --quiet stow
         stow -d ~/.dotfiles/ $argv --ignore=.directory --ignore=README.md --dotfiles
     else
-        echo "Stow not installed. Please install before using."
+        echo "Stow not installed. Installing..."
+        zypper in stow
     end
 end
