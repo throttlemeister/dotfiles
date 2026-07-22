@@ -6,10 +6,10 @@ conky.config = {
 
 	own_window = true,
 	own_window_type = 'normal',
-	own_window_transparent = false,
   own_window_colour = '#00000000',
 	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
-  out_to_wayland = true,
+  out_to_x = true,
+  out_to_wayland = false,
 	double_buffer = true,
 
 	alignment = 'top_left',
