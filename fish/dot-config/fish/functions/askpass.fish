@@ -4,6 +4,6 @@ function askpass -d "installs and wraps askpass for 1P integration"
     else
         set uhome $HOME
         echo "askpass not present... setting up"
-        sudo stow -d $uhome/.dotfiles/local/ -t $uhome/.local/bin askpass
+        stow -d $uhome/.dotfiles/local/ -t $uhome/.local/bin askpass
     end
 end
