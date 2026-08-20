@@ -2,10 +2,25 @@
         name = throttlemeister
         email = throttlemeister@sport-touring.eu
 	github = throttlemeister
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
 [core]
 	editor = nvim
 	excludesFile = /home/throttlemeister/.gitignore
+  pager = delta
+
 [gui]
 	recentrepo = /home/throttlemeister/web/sport-touring.eu
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
+  side-by-side = true
+
+[merge]
+    conflictStyle = zdiff3
