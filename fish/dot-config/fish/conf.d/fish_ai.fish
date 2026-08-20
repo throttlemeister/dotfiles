@@ -73,7 +73,6 @@ function _fish_ai_install --on-event fish_ai_install
     end
     _fish_ai_python_version_check
     _fish_ai_symlink_truststore
-    _fish_ai_autoconfig_gh_models
     _fish_ai_bind
     if ! test -f "$_fish_ai_config_path"
         echo "🤗 You must create a configuration file before the plugin can be used!"
@@ -121,6 +120,11 @@ function _fish_ai_update --on-event fish_ai_update
         if test -z "$model"
             echo "👋 Please specify the Cohere model you want to use in '$_fish_ai_config_path'."
         end
+    end
+    # Upgrade to fish-ai 2.13.0
+    if grep -qE 'provider\s*=\s*"?mistral"?' "$_fish_ai_config_path"
+        echo "🍿 Migrating the Mistral AI provider to OpenAI SDK."
+        sed -i -E 's|^provider\s*=\s*"?mistral"?|provider = self-hosted\nserver = https://api.mistral.ai/v1|g' "$_fish_ai_config_path"
     end
 
     _fish_ai_set_python_version
@@ -226,31 +230,6 @@ function _fish_ai_warn_plaintext_api_keys --description "Warn about plaintext AP
         set_color normal
         echo "."
     end
-end
-
-function _fish_ai_autoconfig_gh_models --description "Deploy configuration for GitHub Models."
-    if test -f "$_fish_ai_config_path"
-        return
-    end
-    if ! type -q gh
-        return
-    end
-    if test -z (gh auth token 2>/dev/null)
-        return
-    end
-    if test -z (gh ext ls | grep "gh models" 2>/dev/null)
-        return
-    end
-    echo "[fish-ai]" >>"$_fish_ai_config_path"
-    echo "configuration = github" >>"$_fish_ai_config_path"
-    echo "" >>"$_fish_ai_config_path"
-    echo "[github]" >>"$_fish_ai_config_path"
-    echo "provider = self-hosted" >>"$_fish_ai_config_path"
-    echo "server = https://models.inference.ai.azure.com" >>"$_fish_ai_config_path"
-    echo "api_key = $(gh auth token)" >>"$_fish_ai_config_path"
-    echo "model = gpt-4o-mini" >>"$_fish_ai_config_path"
-
-    echo "😺 Access to GitHub Models has been automatically configured for you!"
 end
 
 function _fish_ai_show_progress_indicator --description "Show a progress indicator."
