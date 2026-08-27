@@ -4,12 +4,12 @@ conky.config = {
 	xftalpha = 0.1,
 	update_interval = 1,
 
+  out_to_wayland = true,
 	own_window = true,
 	own_window_type = 'override',
   own_window_colour = '#00000000',
 	own_window_transparent = false,
 	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
-  out_to_wayland = true,
 	double_buffer = true,
 
 	alignment = 'top_left',
