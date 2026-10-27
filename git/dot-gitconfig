@@ -13,6 +13,7 @@
 
 [gui]
 	recentrepo = /home/throttlemeister/web/sport-touring.eu
+	recentrepo = /media/nas/iscsi/web/sport-touring.eu
 
 [interactive]
     diffFilter = delta --color-only
