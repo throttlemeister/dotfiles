@@ -19,6 +19,8 @@ working-directory = inherit
 
 # Linux
 gtk-wide-tabs = false
+# gtk-tabs-location = bottom
+gtk-custom-css = tabs.css
 
 # Cursor
 shell-integration-features = no-cursor
