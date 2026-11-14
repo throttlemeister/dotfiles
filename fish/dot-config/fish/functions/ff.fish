@@ -1,15 +1,3 @@
 function ff -d 'fastfetch shortcut'
-    if type --quiet fastfetch
-        if test -n "$ALACRITTY_WINDOW_ID"
-            fastfetch -c examples/6.jsonc $argv
-        else
-            if test -n "$KITTY_WINDOW_ID"
-                fastfetch -l ~/ansible/files/twgrey.png --logo-type kitty-direct --logo-padding-top 2 --logo-width 45 -c $HOME/.config/fastfetch/throttlemeister.jsonc $argv
-            else
-                fastfetch -l ~/ansible/files/twgrey.png --logo-type iterm --logo-padding-top 2 --logo-width 45 -c $HOME/.config/fastfetch/throttlemeister.jsonc $argv
-            end
-        end
-    else
-        command neofetch $argv
-    end
+    __fish_dynamic_alias ff "fastfetch -l ~/ansible/files/twart.txt -c $HOME/.config/fastfetch/throttlemeister.jsonc" neofetch % $argv
 end
