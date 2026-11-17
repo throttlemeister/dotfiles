@@ -1,0 +1,207 @@
+// fastfetch config — "Nightfall Gecko"
+// Palette sampled from the current wallpaper:
+//   2022-05-16-14-16-54-f36-02-night.png
+//   sage #555A49/#538771 · teal #51998E · tan #A68B73
+//   warm sand #ACA093 · olive #837834
+// Colors are nudged brighter so they stay readable on the dark kitty (Frappé) terminal.
+
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+    // openSUSE gecko, recolored with the wallpaper palette
+    "logo": {
+        "type": "builtin",
+        "source": "opensuse",
+        "color": {
+            "1": "#7FA98C", // gecko body  <- wallpaper sage #538771
+            "2": "#C7B7A6"  // outline     <- wallpaper warm sand #ACA093
+        },
+        "padding": {
+            "left": 1,
+            "right": 4
+        }
+    },
+
+    "display": {
+        "separator": " ",
+        "color": {
+            "keys": "#8FAE96",       // default key color  <- wallpaper sage
+            "output": "#C7B7A6",     // values             <- wallpaper warm sand
+            "separator": "#5A6B57"   // subtle muted olive
+        }
+    },
+
+    "modules": [
+        // ── Hardware ────────────────────────────────────────────── sage
+        {
+            "type": "host",
+            "key": "╭─󰌢",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "cpu",
+            "key": "├─󰻠",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "gpu",
+            "key": "├─󰍛",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "disk",
+            "key": "├─",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "memory",
+            "key": "├─󰑭",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "swap",
+            "key": "├─󰓡",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "display",
+            "key": "├─󰍹",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "brightness",
+            "key": "├─󰃞",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "battery",
+            "key": "├─",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "poweradapter",
+            "key": "├─",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "gamepad",
+            "key": "├─",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "bluetooth",
+            "key": "├─",
+            "keyColor": "#7FA98C"
+        },
+        {
+            "type": "sound",
+            "key": "╰─",
+            "keyColor": "#7FA98C"
+        },
+        "break",
+
+        // ── Software ────────────────────────────────────────────── olive gold
+        {
+            "type": "shell",
+            "key": "╭─",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "terminal",
+            "key": "├─",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "terminalfont",
+            "key": "├─",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "lm",
+            "key": "├─󰧨",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "de",
+            "key": "├─",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "wm",
+            "key": "├─",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "theme",
+            "key": "├─󰉼",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "icons",
+            "key": "├─󰀻",
+            "keyColor": "#C4B44E"
+        },
+        {
+            "type": "wallpaper",
+            "key": "╰─󰸉",
+            "keyColor": "#C4B44E"
+        },
+        "break",
+
+        // ── User / OS ───────────────────────────────────────────── teal
+        {
+            "type": "title",
+            "key": "╭─",
+            "format": "{user-name}@{host-name}",
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "os",
+            "key": "├─{icon}",
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "kernel",
+            "key": "├─",
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "packages",
+            "key": "├─󰏖",
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "uptime",
+            "key": "├─󰅐",
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "media",
+            "key": "├─󰝚",
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "localip",
+            "key": "├─󰩟",
+            "compact": true,
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "publicip",
+            "key": "├─󰩠",
+            "keyColor": "#6FC9BB",
+            "timeout": 1000
+        },
+        {
+            "type": "wifi",
+            "key": "├─",
+            "format": "{ssid}",
+            "keyColor": "#6FC9BB"
+        },
+        {
+            "type": "locale",
+            "key": "╰─",
+            "keyColor": "#6FC9BB"
+        }
+    ]
+}
