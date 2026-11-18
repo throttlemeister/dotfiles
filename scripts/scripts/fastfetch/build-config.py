@@ -29,20 +29,26 @@ logo = {"type": "data",
         "color": {str(i + 1): c for i, c in enumerate(gcol)},
         "padding": {"top": 5, "left": 1, "right": 2}}
 
-rows = [  # (key, module dict) ; None = blank spacer
+rows = [  # (key, module dict) ; None = blank spacer; keep in sync with config.jsonc
  ("kernel",  {"type": "kernel", "format": "{release}"}),
  ("uptime",  {"type": "uptime"}),
  ("pkgs",    {"type": "packages", "format": "{rpm} rpm{?flatpak-all} · {flatpak-all} flatpak{?}"}),
  ("shell",   {"type": "shell", "format": "{pretty-name} {version}"}),
  None,
  ("desktop", {"type": "de", "format": "{pretty-name} {version}"}),
+ ("login",   {"type": "lm", "format": "{pretty-name}"}),
  ("session", {"type": "wm", "format": "{pretty-name} · {protocol-name}"}),
  ("term",    {"type": "terminal", "format": "{pretty-name} {version}"}),
  None,
  ("cpu",     {"type": "cpu", "format": "{name} · {cores-logical} threads"}),
  ("gpu",     {"type": "gpu", "format": "{name}"}),
+ ("display", {"type": "display"}),
  ("memory",  {"type": "memory", "format": "{percentage-bar}  {percentage}  {##8492A3}{used} / {total}"}),
- ("disk",    {"type": "disk", "folders": "/", "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}"}),
+ ("root",    {"type": "disk", "folders": "/", "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}"}),
+ ("home",    {"type": "disk", "folders": "/home", "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}"}),
+ ("games",   {"type": "disk", "folders": "/home/throttlemeister/games", "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}"}),
+ ("lan",     {"type": "localip", "compact": True}),
+ ("wan",     {"type": "publicip", "timeout": 1000}),
  ("power",   {"type": "battery", "format": "{capacity-bar}  {capacity}  {##8492A3}{status}"}),
 ]
 keyed = [r for r in rows if r]
