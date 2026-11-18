@@ -1,207 +1,195 @@
-// fastfetch config — "Nightfall Gecko"
-// Palette sampled from the current wallpaper:
-//   2022-05-16-14-16-54-f36-02-night.png
-//   sage #555A49/#538771 · teal #51998E · tan #A68B73
-//   warm sand #ACA093 · olive #837834
-// Colors are nudged brighter so they stay readable on the dark kitty (Frappé) terminal.
-
+// "Skumring over Bleik" — fastfetch by Claude, 2026-11-17
+// The gecko and the key column share one gradient sampled from the wallpaper:
+// dusk-blue sky at the top, through mauve, down to the ember-orange horizon.
+// A matching horizon line sits under the header. Values stay frost-white;
+// percentages and bars turn teal -> amber -> red only when something needs attention.
+// No Nerd Font icons needed. 17 rows, fits a ~100x20 terminal.
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-
-    // openSUSE gecko, recolored with the wallpaper palette
-    "logo": {
-        "type": "builtin",
-        "source": "opensuse",
-        "color": {
-            "1": "#7FA98C", // gecko body  <- wallpaper sage #538771
-            "2": "#C7B7A6"  // outline     <- wallpaper warm sand #ACA093
-        },
-        "padding": {
-            "left": 1,
-            "right": 4
-        }
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "data",
+    "source": "$1        ⣀⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⣶⣶⣦⣤⣰⣶⣶⣤⣤⣀⡀\n$2    ⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢩⡤⢍⢷⡀\n$3  ⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⠿⣧⡘⠿⢛⣼⣧\n$4 ⣴⣿⣿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣭⣙⣋⣩⡄\n$5⣼⣿⡟⠁⣠⣶⣶⣤⡀⠙⢿⣿⣿⣿⠿⠛⠻⠿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠛⠛⠉⠁\n$6⣿⣿⡁⢸⣿⣁⡈⠹⣿⡆⠈⢿⣿⡇    ⠈⠻⣿⣿\n$7⠘⣿⣷⣄⠙⠛⠋⣠⣿⡇  ⠙⠁      ⠈⠙⠣\n$8 ⠈⠛⠿⣿⣿⣿⠿⠋",
+    "color": {
+      "1": "#5E7690",
+      "2": "#7383A0",
+      "3": "#8A88A6",
+      "4": "#A3889C",
+      "5": "#BE8A89",
+      "6": "#D59072",
+      "7": "#E69C58",
+      "8": "#EC8340"
     },
-
-    "display": {
-        "separator": " ",
-        "color": {
-            "keys": "#8FAE96",       // default key color  <- wallpaper sage
-            "output": "#C7B7A6",     // values             <- wallpaper warm sand
-            "separator": "#5A6B57"   // subtle muted olive
-        }
+    "padding": {
+      "top": 5,
+      "left": 1,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "#8492A3",
+      "title": "#DCE4EC",
+      "output": "#DCE4EC",
+      "separator": "#8492A3"
     },
-
-    "modules": [
-        // ── Hardware ────────────────────────────────────────────── sage
-        {
-            "type": "host",
-            "key": "╭─󰌢",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "cpu",
-            "key": "├─󰻠",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "gpu",
-            "key": "├─󰍛",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "disk",
-            "key": "├─",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "memory",
-            "key": "├─󰑭",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "swap",
-            "key": "├─󰓡",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "display",
-            "key": "├─󰍹",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "brightness",
-            "key": "├─󰃞",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "battery",
-            "key": "├─",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "poweradapter",
-            "key": "├─",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "gamepad",
-            "key": "├─",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "bluetooth",
-            "key": "├─",
-            "keyColor": "#7FA98C"
-        },
-        {
-            "type": "sound",
-            "key": "╰─",
-            "keyColor": "#7FA98C"
-        },
-        "break",
-
-        // ── Software ────────────────────────────────────────────── olive gold
-        {
-            "type": "shell",
-            "key": "╭─",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "terminal",
-            "key": "├─",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "terminalfont",
-            "key": "├─",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "lm",
-            "key": "├─󰧨",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "de",
-            "key": "├─",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "wm",
-            "key": "├─",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "theme",
-            "key": "├─󰉼",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "icons",
-            "key": "├─󰀻",
-            "keyColor": "#C4B44E"
-        },
-        {
-            "type": "wallpaper",
-            "key": "╰─󰸉",
-            "keyColor": "#C4B44E"
-        },
-        "break",
-
-        // ── User / OS ───────────────────────────────────────────── teal
-        {
-            "type": "title",
-            "key": "╭─",
-            "format": "{user-name}@{host-name}",
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "os",
-            "key": "├─{icon}",
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "kernel",
-            "key": "├─",
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "packages",
-            "key": "├─󰏖",
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "uptime",
-            "key": "├─󰅐",
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "media",
-            "key": "├─󰝚",
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "localip",
-            "key": "├─󰩟",
-            "compact": true,
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "publicip",
-            "key": "├─󰩠",
-            "keyColor": "#6FC9BB",
-            "timeout": 1000
-        },
-        {
-            "type": "wifi",
-            "key": "├─",
-            "format": "{ssid}",
-            "keyColor": "#6FC9BB"
-        },
-        {
-            "type": "locale",
-            "key": "╰─",
-            "keyColor": "#6FC9BB"
-        }
-    ]
+    "brightColor": false,
+    "showErrors": false,
+    "size": {
+      "binaryPrefix": "iec",
+      "ndigits": 1
+    },
+    "percent": {
+      "type": [
+        "bar",
+        "num",
+        "num-color",
+        "bar-monochrome"
+      ],
+      "ndigits": 0,
+      "color": {
+        "green": "#83B7AD",
+        "yellow": "#E69C58",
+        "red": "#D9776B"
+      }
+    },
+    "bar": {
+      "width": 10,
+      "char": {
+        "elapsed": "■",
+        "total": "■"
+      },
+      "border": null,
+      "color": {
+        "total": "#3E4A5A"
+      }
+    }
+  },
+  "modules": [
+    {
+      "type": "os",
+      "key": " ",
+      "format": "{#1}{##E69C58}{pretty-name}{#}"
+    },
+    {
+      "type": "host",
+      "key": " ",
+      "format": "{##8492A3}{family}"
+    },
+    {
+      "type": "custom",
+      "format": "{##5E7690}━{##617892}━{##657A95}━{##687C97}━{##6B7E9A}━{##6E809C}━{##72829F}━{##7583A1}━{##7984A1}━{##7C85A2}━{##8086A3}━{##8387A4}━{##8787A5}━{##8B88A6}━{##8E88A4}━{##9288A3}━{##9688A1}━{##9A88A0}━{##9E889E}━{##A2889C}━{##A6889A}━{##AA8997}━{##AE8994}━{##B38991}━{##B7898E}━{##BB8A8B}━{##BF8A88}━{##C38B84}━{##C68C81}━{##CA8D7D}━{##CD8E7A}━{##D18F76}━{##D49073}━{##D7926F}━{##DA936A}━{##DD9566}━{##DF9762}━{##E2995E}━{##E49B5A}━{##E69A56}━{##E79653}━{##E8934F}━{##E98F4B}━{##EA8B47}━{##EB8744}━{##EC8340}━{#}"
+    },
+    {
+      "type": "kernel",
+      "format": "{release}",
+      "key": "kernel  ",
+      "keyColor": "#5E7690"
+    },
+    {
+      "type": "uptime",
+      "key": "uptime  ",
+      "keyColor": "#6B7E9A"
+    },
+    {
+      "type": "packages",
+      //"format": "{rpm} rpm{?flatpak-all} · {flatpak-all} flatpak{?}",
+      "key": "pkgs    ",
+      "keyColor": "#7984A2"
+    },
+    {
+      "type": "shell",
+      "format": "{pretty-name} {version}",
+      "key": "shell   ",
+      "keyColor": "#8888A5"
+    },
+    "break",
+    {
+      "type": "de",
+      "format": "{pretty-name} {version}",
+      "key": "desktop ",
+      "keyColor": "#9888A1"
+    },
+    {
+      "type": "wm",
+      "format": "{pretty-name} · {protocol-name}",
+      "key": "session ",
+      "keyColor": "#A88899"
+    },
+    {
+      "type": "lm",
+      "format": "{pretty-name}",
+      "key": "login   ",
+      "keyColor": "#A88899"
+    },
+    {
+      "type": "terminal",
+      "format": "{pretty-name} {version}",
+      "key": "term    ",
+      "keyColor": "#B98A8C"
+    },
+    "break",
+    {
+      "type": "cpu",
+      "format": "{name} · {cores-logical} threads",
+      "key": "cpu     ",
+      "keyColor": "#C88D7F"
+    },
+    {
+      "type": "gpu",
+      "format": "{name}",
+      "key": "gpu     ",
+      "keyColor": "#D79170"
+    },
+    {
+      "type": "display",
+      "key": "display ",
+      "keyColor": "#D79170"
+    },
+    {
+      "type": "memory",
+      "format": "{percentage-bar}  {percentage}  {##8492A3}{used} / {total}",
+      "key": "memory  ",
+      "keyColor": "#E1995F"
+    },
+    {
+      "type": "disk",
+      "folders": "/",
+      "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}",
+      "key": "root    ",
+      "keyColor": "#E8934F"
+    },
+    {
+      "type": "disk",
+      "folders": "/home",
+      "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}",
+      "key": "home    ",
+      "keyColor": "#E8934F"
+    },
+    {
+      "type": "disk",
+      "folders": "/home/throttlemeister/games",
+      "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}",
+      "key": "games   ",
+      "keyColor": "#EC8340"
+    },
+    {
+      "type": "localip",
+      "key": "lan     ",
+      "compact": true,
+      "keyColor": "#EC8340"
+    },
+    {
+      "type": "publicip",
+      "key": "wan     ",
+      "keyColor": "#EC8340",
+      "timeout": 1000
+    },
+    {
+      "type": "battery",
+      "format": "{capacity-bar}  {capacity}  {##8492A3}{status}",
+      "key": "power   ",
+      "keyColor": "#EC8340"
+    }
+  ]
 }
