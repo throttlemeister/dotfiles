@@ -87,46 +87,53 @@
       "keyColor": "#7866AA"
     },
     {
+      "type": "disk",
+      "folders": "/",
+      "format": "{create-time:10} ({days} days)",
+      "key": "  os age  ",
+      "keyColor": "#776DB3"
+    },
+    {
       "type": "uptime",
       "key": "󰅐  uptime  ",
-      "keyColor": "#766EB4"
+      "keyColor": "#7574BC"
     },
     {
       "type": "packages",
       //"format": "{rpm} rpm{?flatpak-all} · {flatpak-all} flatpak{?}",
       "key": "󰏖  pkgs    ",
-      "keyColor": "#7575BE"
+      "keyColor": "#747AC4"
     },
     {
       "type": "shell",
       "format": "{pretty-name} {version}",
       "key": "  shell   ",
-      "keyColor": "#737CC6"
+      "keyColor": "#7280CA"
     },
     "break",
     {
       "type": "de",
       "format": "{pretty-name} {version}",
       "key": "  desktop ",
-      "keyColor": "#7183CD"
+      "keyColor": "#7186D0"
     },
     {
       "type": "lm",
       "format": "{pretty-name}",
       "key": "󰧨  login   ",
-      "keyColor": "#7288D1"
+      "keyColor": "#7786CE"
     },
     {
       "type": "wm",
       "format": "{pretty-name} · {protocol-name}",
       "key": "  session ",
-      "keyColor": "#8082CA"
+      "keyColor": "#8381C8"
     },
     {
       "type": "terminal",
       "format": "{pretty-name} {version}",
       "key": "  term    ",
-      "keyColor": "#8C7CC2"
+      "keyColor": "#8E7BC1"
     },
     "break",
     {
@@ -139,56 +146,56 @@
       "type": "gpu",
       "format": "{name}",
       "key": "󰍛  gpu     ",
-      "keyColor": "#9A89BD"
+      "keyColor": "#9989BD"
     },
     {
       "type": "display",
       "key": "󰍹  display ",
-      "keyColor": "#A28FBA"
+      "keyColor": "#A08FBB"
     },
     {
       "type": "memory",
       "format": "{percentage-bar}  {percentage}  {##948CB8}{used} / {total}",
       "key": "󰑭  memory  ",
-      "keyColor": "#B08DB5"
+      "keyColor": "#AC8DB6"
     },
     {
       "type": "disk",
       "folders": "/",
       "format": "{size-percentage-bar}  {size-percentage}  {##948CB8}{size-used} / {size-total}",
       "key": "  root    ",
-      "keyColor": "#BC8BAF"
+      "keyColor": "#B88CB1"
     },
     {
       "type": "disk",
       "folders": "/home",
       "format": "{size-percentage-bar}  {size-percentage}  {##948CB8}{size-used} / {size-total}",
       "key": "  home    ",
-      "keyColor": "#C38CA0"
+      "keyColor": "#C08CA8"
     },
     {
       "type": "disk",
       "folders": "/home/throttlemeister/games",
       "format": "{size-percentage-bar}  {size-percentage}  {##948CB8}{size-used} / {size-total}",
       "key": "  games   ",
-      "keyColor": "#C88E8D"
+      "keyColor": "#C58D98"
     },
     {
       "type": "localip",
       "key": "󰩟  lan     ",
       "compact": true,
-      "keyColor": "#CE917A"
+      "keyColor": "#CA8F86"
     },
     {
       "type": "wifi",
       "key": "  wifi    ",
       "format": "{ssid}",
-      "keyColor": "#CE917A"
+      "keyColor": "#CF9277"
     },
     {
       "type": "publicip",
       "key": "󰩟  wan     ",
-      "keyColor": "#D39669",
+      "keyColor": "#D49667",
       "timeout": 1000
     },
     {
