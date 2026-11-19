@@ -1,10 +1,23 @@
 import json, sys
 out = sys.argv[1]
-# Sky-to-horizon gradient sampled from the dusk wallpaper (blue sky -> mauve -> amber -> ember)
-STOPS = ["#5E7690", "#7383A0", "#8A88A6", "#A3889C", "#BE8A89", "#D59072", "#E69C58", "#EC8340"]
+# Gradient sampled from the current wallpaper (KDE "Next" / Hanabi, dark):
+# indigo-violet at the top, through periwinkle and mauve, down to amber.
+STOPS = ["#7866AA", "#7478C2", "#7089D2", "#8F7AC0", "#9E8FBC", "#BE8BAE", "#CB8F80", "#D99A55"]
+
+def _to_linear(c):
+    c /= 255
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+def _to_srgb(c):
+    v = 12.92 * c if c <= 0.0031308 else 1.055 * c ** (1 / 2.4) - 0.055
+    return max(0, min(255, round(v * 255)))
+
 def lerp(a, b, t):
-    a = [int(a[i:i+2], 16) for i in (1, 3, 5)]; b = [int(b[i:i+2], 16) for i in (1, 3, 5)]
-    return "#" + "".join(f"{round(x + (y - x) * t):02X}" for x, y in zip(a, b))
+    a = [int(a[i:i+2], 16) for i in (1, 3, 5)]
+    b = [int(b[i:i+2], 16) for i in (1, 3, 5)]
+    # interpolate in linear light so the ramp stays perceptually smooth
+    return "#" + "".join(f"{_to_srgb(_to_linear(x) * (1 - t) + _to_linear(y) * t):02X}" for x, y in zip(a, b))
+
 def grad(n):
     res = []
     for i in range(n):
@@ -12,7 +25,8 @@ def grad(n):
         res.append(lerp(STOPS[k], STOPS[k + 1], p - k))
     return res
 
-FROST, SLATE, DIM = "#DCE4EC", "#8492A3", "#3E4A5A"
+FROST, SLATE, DIM = "#E2E0EE", "#948CB8", "#3A3152"
+AMBER, TEAL, CORAL = "#D99A55", "#82B7B8", "#CC736C"
 gecko = [
 "        ⣀⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⣶⣶⣦⣤⣰⣶⣶⣤⣤⣀⡀",
 "    ⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢩⡤⢍⢷⡀",
@@ -23,7 +37,7 @@ gecko = [
 "⠘⣿⣷⣄⠙⠛⠋⣠⣿⡇  ⠙⠁      ⠈⠙⠣",
 " ⠈⠛⠿⣿⣿⣿⠿⠋",
 ]
-gcol = STOPS  # one stop per gecko row: the gecko is the sunset
+gcol = STOPS  # one stop per gecko row: the gecko follows the wallpaper
 logo = {"type": "data",
         "source": "\n".join(f"${i+1}{l}" for i, l in enumerate(gecko)),
         "color": {str(i + 1): c for i, c in enumerate(gcol)},
@@ -32,7 +46,7 @@ logo = {"type": "data",
 rows = [  # (key, module dict) ; None = blank spacer; keep in sync with config.jsonc
  ("kernel",  {"type": "kernel", "format": "{release}"}),
  ("uptime",  {"type": "uptime"}),
- ("pkgs",    {"type": "packages", "format": "{rpm} rpm{?flatpak-all} · {flatpak-all} flatpak{?}"}),
+ ("pkgs",    {"type": "packages"}),
  ("shell",   {"type": "shell", "format": "{pretty-name} {version}"}),
  None,
  ("desktop", {"type": "de", "format": "{pretty-name} {version}"}),
@@ -43,21 +57,21 @@ rows = [  # (key, module dict) ; None = blank spacer; keep in sync with config.j
  ("cpu",     {"type": "cpu", "format": "{name} · {cores-logical} threads"}),
  ("gpu",     {"type": "gpu", "format": "{name}"}),
  ("display", {"type": "display"}),
- ("memory",  {"type": "memory", "format": "{percentage-bar}  {percentage}  {##8492A3}{used} / {total}"}),
- ("root",    {"type": "disk", "folders": "/", "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}"}),
- ("home",    {"type": "disk", "folders": "/home", "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}"}),
- ("games",   {"type": "disk", "folders": "/home/throttlemeister/games", "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}"}),
- ("lan",     {"type": "localip", "compact": True}),
- ("wan",     {"type": "publicip", "timeout": 1000}),
- ("power",   {"type": "battery", "format": "{capacity-bar}  {capacity}  {##8492A3}{status}"}),
+ ("memory",  {"type": "memory", "format": f"{{percentage-bar}}  {{percentage}}  {{##{SLATE[1:]}}}{{used}} / {{total}}"}),
+ ("root",    {"type": "disk", "folders": "/", "format": f"{{size-percentage-bar}}  {{size-percentage}}  {{##{SLATE[1:]}}}{{size-used}} / {{size-total}}"}),
+ ("home",    {"type": "disk", "folders": "/home", "format": f"{{size-percentage-bar}}  {{size-percentage}}  {{##{SLATE[1:]}}}{{size-used}} / {{size-total}}"}),
+ ("games",   {"type": "disk", "folders": "/home/throttlemeister/games", "format": f"{{size-percentage-bar}}  {{size-percentage}}  {{##{SLATE[1:]}}}{{size-used}} / {{size-total}}"}),
+ ("lan",     {"type": "localip", "key": "", "compact": True}),
+ ("wan",     {"type": "publicip", "key": "", "keyColor": "", "timeout": 1000}),
+ ("power",   {"type": "battery", "format": f"{{capacity-bar}}  {{capacity}}  {{##{SLATE[1:]}}}{{status}}"}),
 ]
 keyed = [r for r in rows if r]
 kc = grad(len(keyed))
-W = 46
+W = 48
 strip = "".join(f"{{##{c[1:]}}}━" for c in grad(W))
 modules = [
- {"type": "os", "key": " ", "format": "{#1}{##E69C58}{pretty-name}{#}"},
- {"type": "host", "key": " ", "format": "{##8492A3}{family}"},
+ {"type": "os", "key": " ", "format": f"{{#1}}{{##{AMBER[1:]}}}{{pretty-name}}{{#}}"},
+ {"type": "host", "key": " ", "format": f"{{##{SLATE[1:]}}}{{family}}"},
  {"type": "custom", "format": strip + "{#}"},
 ]
 i = 0
@@ -78,17 +92,21 @@ cfg = {
   "showErrors": False,
   "size": {"binaryPrefix": "iec", "ndigits": 1},
   "percent": {"type": ["bar", "num", "num-color", "bar-monochrome"], "ndigits": 0,
-              "color": {"green": "#83B7AD", "yellow": "#E69C58", "red": "#D9776B"}},
+              "color": {"green": TEAL, "yellow": AMBER, "red": CORAL}},
   "bar": {"width": 10, "char": {"elapsed": "■", "total": "■"}, "border": None,
           "color": {"total": DIM}},
  },
  "modules": modules,
 }
-header = """// "Skumring over Bleik" — fastfetch by Claude, 2026-11-17
+header = """// "Hanabi" (KDE Next, dark) — fastfetch theme, updated 2026-11-19
 // The gecko and the key column share one gradient sampled from the wallpaper:
-// dusk-blue sky at the top, through mauve, down to the ember-orange horizon.
+// deep indigo-violet at the top, through periwinkle and mauve, down to amber.
 // A matching horizon line sits under the header. Values stay frost-white;
 // percentages and bars turn teal -> amber -> red only when something needs attention.
 // No Nerd Font icons needed. 17 rows, fits a ~100x20 terminal.
 """
-open(out, "w", encoding="utf-8").write(header + json.dumps(cfg, ensure_ascii=False, indent=2) + "\n")
+text = json.dumps(cfg, ensure_ascii=False, indent=2) + "\n"
+# keep the alternate packages format documented, but disabled
+text = text.replace('      "type": "packages",\n      "key"',
+                    '      "type": "packages",\n      //"format": "{rpm} rpm{?flatpak-all} · {flatpak-all} flatpak{?}",\n      "key"')
+open(out, "w", encoding="utf-8").write(header + text)

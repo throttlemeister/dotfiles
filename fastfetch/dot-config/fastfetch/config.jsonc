@@ -1,6 +1,6 @@
-// "Skumring over Bleik" — fastfetch by Claude, 2026-11-17
+// "Hanabi" (KDE Next, dark) — fastfetch theme, updated 2026-11-19
 // The gecko and the key column share one gradient sampled from the wallpaper:
-// dusk-blue sky at the top, through mauve, down to the ember-orange horizon.
+// deep indigo-violet at the top, through periwinkle and mauve, down to amber.
 // A matching horizon line sits under the header. Values stay frost-white;
 // percentages and bars turn teal -> amber -> red only when something needs attention.
 // No Nerd Font icons needed. 17 rows, fits a ~100x20 terminal.
@@ -10,14 +10,14 @@
     "type": "data",
     "source": "$1        ⣀⣤⣴⣶⣾⣿⣿⣿⣿⣿⣿⣶⣶⣦⣤⣰⣶⣶⣤⣤⣀⡀\n$2    ⢀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢩⡤⢍⢷⡀\n$3  ⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⠿⣧⡘⠿⢛⣼⣧\n$4 ⣴⣿⣿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣭⣙⣋⣩⡄\n$5⣼⣿⡟⠁⣠⣶⣶⣤⡀⠙⢿⣿⣿⣿⠿⠛⠻⠿⣿⣿⣿⣿⠛⠛⠛⠛⠛⠛⠛⠉⠁\n$6⣿⣿⡁⢸⣿⣁⡈⠹⣿⡆⠈⢿⣿⡇    ⠈⠻⣿⣿\n$7⠘⣿⣷⣄⠙⠛⠋⣠⣿⡇  ⠙⠁      ⠈⠙⠣\n$8 ⠈⠛⠿⣿⣿⣿⠿⠋",
     "color": {
-      "1": "#5E7690",
-      "2": "#7383A0",
-      "3": "#8A88A6",
-      "4": "#A3889C",
-      "5": "#BE8A89",
-      "6": "#D59072",
-      "7": "#E69C58",
-      "8": "#EC8340"
+      "1": "#7866AA",
+      "2": "#7478C2",
+      "3": "#7089D2",
+      "4": "#8F7AC0",
+      "5": "#9E8FBC",
+      "6": "#BE8BAE",
+      "7": "#CB8F80",
+      "8": "#D99A55"
     },
     "padding": {
       "top": 5,
@@ -28,10 +28,10 @@
   "display": {
     "separator": "  ",
     "color": {
-      "keys": "#8492A3",
-      "title": "#DCE4EC",
-      "output": "#DCE4EC",
-      "separator": "#8492A3"
+      "keys": "#948CB8",
+      "title": "#E2E0EE",
+      "output": "#E2E0EE",
+      "separator": "#948CB8"
     },
     "brightColor": false,
     "showErrors": false,
@@ -48,9 +48,9 @@
       ],
       "ndigits": 0,
       "color": {
-        "green": "#83B7AD",
-        "yellow": "#E69C58",
-        "red": "#D9776B"
+        "green": "#82B7B8",
+        "yellow": "#D99A55",
+        "red": "#CC736C"
       }
     },
     "bar": {
@@ -61,7 +61,7 @@
       },
       "border": null,
       "color": {
-        "total": "#3E4A5A"
+        "total": "#3A3152"
       }
     }
   },
@@ -69,127 +69,127 @@
     {
       "type": "os",
       "key": " ",
-      "format": "{#1}{##E69C58}{pretty-name}{#}"
+      "format": "{#1}{##D99A55}{pretty-name}{#}"
     },
     {
       "type": "host",
       "key": " ",
-      "format": "{##8492A3}{family}"
+      "format": "{##948CB8}{family}"
     },
     {
       "type": "custom",
-      "format": "{##5E7690}━{##617892}━{##657A95}━{##687C97}━{##6B7E9A}━{##6E809C}━{##72829F}━{##7583A1}━{##7984A1}━{##7C85A2}━{##8086A3}━{##8387A4}━{##8787A5}━{##8B88A6}━{##8E88A4}━{##9288A3}━{##9688A1}━{##9A88A0}━{##9E889E}━{##A2889C}━{##A6889A}━{##AA8997}━{##AE8994}━{##B38991}━{##B7898E}━{##BB8A8B}━{##BF8A88}━{##C38B84}━{##C68C81}━{##CA8D7D}━{##CD8E7A}━{##D18F76}━{##D49073}━{##D7926F}━{##DA936A}━{##DD9566}━{##DF9762}━{##E2995E}━{##E49B5A}━{##E69A56}━{##E79653}━{##E8934F}━{##E98F4B}━{##EA8B47}━{##EB8744}━{##EC8340}━{#}"
+      "format": "{##7866AA}━{##7769AE}━{##776CB2}━{##766EB5}━{##7671B9}━{##7574BC}━{##7476C0}━{##7479C3}━{##737BC5}━{##737EC8}━{##7281CA}━{##7183CC}━{##7186CF}━{##7088D1}━{##7388D1}━{##7886CE}━{##7D84CB}━{##8281C9}━{##867FC6}━{##8A7DC3}━{##8E7AC0}━{##917DBF}━{##9380BF}━{##9683BE}━{##9887BE}━{##9A8ABD}━{##9C8DBD}━{##9F8FBC}━{##A48EBA}━{##A98EB8}━{##AE8DB6}━{##B38DB4}━{##B78CB1}━{##BC8BAF}━{##BF8BAC}━{##C18CA6}━{##C38C9F}━{##C58D99}━{##C78E92}━{##C98E8A}━{##CA8F82}━{##CD907C}━{##CF9277}━{##D19471}━{##D3956B}━{##D59764}━{##D7985D}━{##D99A55}━{#}"
     },
     {
       "type": "kernel",
       "format": "{release}",
       "key": "kernel  ",
-      "keyColor": "#5E7690"
+      "keyColor": "#7866AA"
     },
     {
       "type": "uptime",
       "key": "uptime  ",
-      "keyColor": "#677B97"
+      "keyColor": "#766EB4"
     },
     {
       "type": "packages",
       //"format": "{rpm} rpm{?flatpak-all} · {flatpak-all} flatpak{?}",
       "key": "pkgs    ",
-      "keyColor": "#6F819D"
+      "keyColor": "#7575BE"
     },
     {
       "type": "shell",
       "format": "{pretty-name} {version}",
       "key": "shell   ",
-      "keyColor": "#7884A1"
+      "keyColor": "#737CC6"
     },
     "break",
     {
       "type": "de",
       "format": "{pretty-name} {version}",
       "key": "desktop ",
-      "keyColor": "#8286A4"
+      "keyColor": "#7183CD"
     },
     {
       "type": "lm",
       "format": "{pretty-name}",
       "key": "login   ",
-      "keyColor": "#8B88A5"
+      "keyColor": "#7288D1"
     },
     {
       "type": "wm",
       "format": "{pretty-name} · {protocol-name}",
       "key": "session ",
-      "keyColor": "#9688A1"
+      "keyColor": "#8082CA"
     },
     {
       "type": "terminal",
       "format": "{pretty-name} {version}",
       "key": "term    ",
-      "keyColor": "#A0889D"
+      "keyColor": "#8C7CC2"
     },
     "break",
     {
       "type": "cpu",
       "format": "{name} · {cores-logical} threads",
       "key": "cpu     ",
-      "keyColor": "#AB8996"
+      "keyColor": "#9481BF"
     },
     {
       "type": "gpu",
       "format": "{name}",
       "key": "gpu     ",
-      "keyColor": "#B6898F"
+      "keyColor": "#9A89BD"
     },
     {
       "type": "display",
       "key": "display ",
-      "keyColor": "#C18B86"
+      "keyColor": "#A28FBA"
     },
     {
       "type": "memory",
-      "format": "{percentage-bar}  {percentage}  {##8492A3}{used} / {total}",
+      "format": "{percentage-bar}  {percentage}  {##948CB8}{used} / {total}",
       "key": "memory  ",
-      "keyColor": "#CA8D7D"
+      "keyColor": "#B08DB5"
     },
     {
       "type": "disk",
       "folders": "/",
-      "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}",
+      "format": "{size-percentage-bar}  {size-percentage}  {##948CB8}{size-used} / {size-total}",
       "key": "root    ",
-      "keyColor": "#D49073"
+      "keyColor": "#BC8BAF"
     },
     {
       "type": "disk",
       "folders": "/home",
-      "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}",
+      "format": "{size-percentage-bar}  {size-percentage}  {##948CB8}{size-used} / {size-total}",
       "key": "home    ",
-      "keyColor": "#DB9469"
+      "keyColor": "#C38CA0"
     },
     {
       "type": "disk",
       "folders": "/home/throttlemeister/games",
-      "format": "{size-percentage-bar}  {size-percentage}  {##8492A3}{size-used} / {size-total}",
+      "format": "{size-percentage-bar}  {size-percentage}  {##948CB8}{size-used} / {size-total}",
       "key": "games   ",
-      "keyColor": "#E2995E"
+      "keyColor": "#C88E8D"
     },
     {
       "type": "localip",
       "key": "lan     ",
       "compact": true,
-      "keyColor": "#E79854"
+      "keyColor": "#CE917A"
     },
     {
       "type": "publicip",
       "key": "wan     ",
-      "keyColor": "#EA8D4A",
+      "keyColor": "#D39669",
       "timeout": 1000
     },
     {
       "type": "battery",
-      "format": "{capacity-bar}  {capacity}  {##8492A3}{status}",
+      "format": "{capacity-bar}  {capacity}  {##948CB8}{status}",
       "key": "power   ",
-      "keyColor": "#EC8340"
+      "keyColor": "#D99A55"
     }
   ]
 }
