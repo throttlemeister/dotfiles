@@ -181,15 +181,15 @@
       "keyColor": "#C58D98"
     },
     {
-      "type": "localip",
-      "key": "󰩟  lan     ",
-      "compact": true,
-      "keyColor": "#CA8F86"
-    },
-    {
       "type": "wifi",
       "key": "  wifi    ",
       "format": "{ssid}",
+      "keyColor": "#CA8F86"
+    },
+    {
+      "type": "localip",
+      "key": "󰩟  lan     ",
+      "compact": true,
       "keyColor": "#CF9277"
     },
     {

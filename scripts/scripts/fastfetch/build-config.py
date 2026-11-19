@@ -62,8 +62,8 @@ rows = [  # (key, module dict) ; None = blank spacer; keep in sync with config.j
  ("  root    ", {"type": "disk", "folders": "/", "format": f"{{size-percentage-bar}}  {{size-percentage}}  {{##{SLATE[1:]}}}{{size-used}} / {{size-total}}"}),
  ("  home    ", {"type": "disk", "folders": "/home", "format": f"{{size-percentage-bar}}  {{size-percentage}}  {{##{SLATE[1:]}}}{{size-used}} / {{size-total}}"}),
  ("  games   ", {"type": "disk", "folders": "/home/throttlemeister/games", "format": f"{{size-percentage-bar}}  {{size-percentage}}  {{##{SLATE[1:]}}}{{size-used}} / {{size-total}}"}),
- ("󰩟  lan     ", {"type": "localip", "key": "", "compact": True}),
  ("  wifi    ", {"type": "wifi", "key": "", "format": "{ssid}"}),
+ ("󰩟  lan     ", {"type": "localip", "key": "", "compact": True}),
  ("󰩟  wan     ", {"type": "publicip", "key": "", "keyColor": "", "timeout": 1000}),
  ("  power   ", {"type": "battery", "format": f"{{capacity-bar}}  {{capacity}}  {{##{SLATE[1:]}}}{{status}}"}),
 ]
