@@ -1,0 +1,17 @@
+[Appearance]
+AutoHideTabBar=true
+BackgroundBlur=true
+BackgroundOpacity=0.65
+ColorScheme=user:53a42dd3-d7cf-4709-aec0-843a126c2a76.colorscheme
+UseCustomWindowSize=true
+WindowColumns=135
+WindowRows=35
+
+[Behavior]
+CopyOnSelect=true
+
+[Presets]
+DefaultPreset=file:///home/throttlemeister/.local/share/kwi/presets/862865ba-338a-4f2a-9f2c-789a63229681.preset
+
+[Terminal]
+CursorBlinking=true

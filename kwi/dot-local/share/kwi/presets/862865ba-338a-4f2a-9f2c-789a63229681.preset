@@ -1,0 +1,10 @@
+[General]
+Format=KwiLaunchPreset
+Name=Fish
+Version=1
+
+[Launch]
+Command=/usr/bin/fish
+Directory=
+DirectoryMode=Current
+Environment=
