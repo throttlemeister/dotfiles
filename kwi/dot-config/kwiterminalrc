@@ -9,6 +9,9 @@ WindowRows=35
 
 [Behavior]
 CopyOnSelect=true
+UseCustomWindowSize=true
+WindowColumns=135
+WindowRows=35
 
 [Presets]
 DefaultPreset=file:///home/throttlemeister/.local/share/kwi/presets/862865ba-338a-4f2a-9f2c-789a63229681.preset
