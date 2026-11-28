@@ -3,6 +3,8 @@ set -gx ANSIBLE_CONFIG $HOME/ansible/ansible.cfg
 zoxide init fish --cmd cd | source
 atuin init fish | source
 /home/linuxbrew/.linuxbrew/bin/tv init fish | source
+# Set up fzf key bindings
+fzf --fish | source
 bind up _atuin_bind_up
 fzf_configure_bindings --directory=\cf --git_log=\cg
 bind ctrl-backspace backward-kill-word
